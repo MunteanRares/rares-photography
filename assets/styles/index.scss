@@ -1,0 +1,116 @@
+@use "/assets/styles/variables" as *;
+.section-header {
+    height: 100vh;
+}
+
+.background-container {
+    height: 100%;
+    background-image: url("/images/Layer3.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.overlay-blur {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backdrop-filter: blur(8px);
+}
+
+.overlay-rectangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 25%;
+    background-color: $primaryColor;
+}
+
+.header-content {
+    padding: 2.4rem 3.6rem;
+    font-size: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.top-text {
+    display: flex;
+    justify-content: space-between;
+
+    .hour-text {
+        font-family: $boldFontFamily;
+        font-size: 2.4rem;
+        color: $primaryColorContrast;
+    }
+
+    .social-text {
+        display: flex;
+        gap: 1.2rem;
+    }
+}
+
+.header-title {
+    width: 90%;
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    font-family: $boldFontFamily;
+    font-optical-sizing: auto;
+    font-size: 18rem;
+
+    .title-name {
+        display: flex;
+        flex-direction: column;
+        line-height: 0.82;
+
+        .first-name {
+            margin-left: 8rem;
+        }
+
+        .second-name-div {
+            margin-left: 13rem;
+        }
+
+        .skills {
+            margin-top: 0.8rem;
+            text-align: center;
+            font-family: $defaultFontFamily;
+            font-size: 1.6rem;
+        }
+    }
+
+    .menu {
+        font-family: $defaultFontFamily;
+        align-self: flex-end;
+        font-size: 2rem;
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+    }
+}
+
+.bottom-text {
+    display: flex;
+    justify-content: space-between;
+
+    .span-text {
+        font-family: $boldFontFamily;
+        font-size: 2.4rem;
+        letter-spacing: 0.3px;
+        color: $primaryColorContrast;
+    }
+
+    .copyright-text {
+        text-align: right;
+        font-size: 1.4rem;
+    }
+}
