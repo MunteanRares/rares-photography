@@ -30,6 +30,7 @@
 }
 
 .header-content {
+    cursor: default;
     padding: 2.4rem 3.6rem;
     font-size: 2rem;
     position: relative;
@@ -89,16 +90,23 @@
         font-family: $defaultFontFamily;
         align-self: flex-end;
         font-size: 2rem;
+        margin-right: 1.1rem;
 
         .menu-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.8rem;
         }
 
         .icon-fixed {
             width: 0.9rem;
-            margin-top: 1.6px;
+            display: flex;
+            align-items: center;
+            color: $lightFontColor;
+        }
+
+        .menu-links {
+            text-decoration: none;
             color: $lightFontColor;
         }
     }

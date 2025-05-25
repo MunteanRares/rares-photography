@@ -1,11 +1,13 @@
 <script setup>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { delay, motion } from "motion-v";
-import { basicTextVariant } from "../utils/animations";
+import {
+    faChevronRight,
+    faChevronLeft,
+} from "@fortawesome/free-solid-svg-icons";
+import { motion } from "motion-v";
 
-library.add(faChevronRight);
+library.add(faChevronRight, faChevronLeft);
 </script>
 
 <template>
@@ -64,59 +66,154 @@ library.add(faChevronRight);
                         animate="animate"
                         class="menu"
                     >
-                        <motion.div
-                            :variants="basicTextVariant"
-                            class="menu-item"
-                        >
-                            <FontAwesomeIcon
-                                icon="chevron-right"
-                                class="icon-fixed"
-                            />
-                            <p>SHOP</p>
+                        <motion.div :variants="basicTextVariant">
+                            <motion.div
+                                class="menu-item"
+                                while-hover="whileHover"
+                                animate="animate"
+                                initial="initial"
+                            >
+                                <motion.div :variants="leftIconHoverVariant">
+                                    <FontAwesomeIcon
+                                        icon="chevron-left"
+                                        class="icon-fixed"
+                                    />
+                                </motion.div>
+
+                                <motion.a
+                                    :variants="menuItemVariant"
+                                    class="menu-links"
+                                    href="#"
+                                    >SHOP</motion.a
+                                >
+
+                                <motion.div :variants="rightIconVariant">
+                                    <FontAwesomeIcon
+                                        icon="chevron-left"
+                                        class="icon-fixed"
+                                    />
+                                </motion.div>
+                            </motion.div>
                         </motion.div>
 
-                        <motion.div
-                            :variants="basicTextVariant"
-                            class="menu-item"
-                        >
-                            <FontAwesomeIcon
-                                icon="chevron-right"
-                                class="icon-fixed"
-                            />
-                            <p>WORK</p>
+                        <motion.div :variants="basicTextVariant">
+                            <motion.div
+                                class="menu-item"
+                                while-hover="whileHover"
+                                initial="initial"
+                                animate="animate"
+                            >
+                                <motion.div :variants="leftIconHoverVariant">
+                                    <FontAwesomeIcon
+                                        icon="chevron-left"
+                                        class="icon-fixed"
+                                    />
+                                </motion.div>
+
+                                <motion.a
+                                    :variants="menuItemVariant"
+                                    class="menu-links"
+                                    href="#"
+                                    >WORK</motion.a
+                                >
+
+                                <motion.div :variants="rightIconVariant">
+                                    <FontAwesomeIcon
+                                        icon="chevron-left"
+                                        class="icon-fixed"
+                                    />
+                                </motion.div>
+                            </motion.div>
                         </motion.div>
 
-                        <motion.div
-                            :variants="basicTextVariant"
-                            class="menu-item"
-                        >
-                            <FontAwesomeIcon
-                                icon="chevron-right"
-                                class="icon-fixed"
-                            />
-                            <p>ABOUT</p>
+                        <motion.div :variants="basicTextVariant">
+                            <motion.div
+                                while-hover="whileHover"
+                                initial="initial"
+                                animate="animate"
+                                class="menu-item"
+                            >
+                                <motion.div :variants="leftIconHoverVariant">
+                                    <FontAwesomeIcon
+                                        icon="chevron-left"
+                                        class="icon-fixed"
+                                    />
+                                </motion.div>
+
+                                <motion.a
+                                    :variants="menuItemVariant"
+                                    class="menu-links"
+                                    href="#"
+                                    >ABOUT</motion.a
+                                >
+
+                                <motion.div :variants="rightIconVariant">
+                                    <FontAwesomeIcon
+                                        icon="chevron-left"
+                                        class="icon-fixed"
+                                    />
+                                </motion.div>
+                            </motion.div>
                         </motion.div>
 
-                        <motion.div
-                            :variants="basicTextVariant"
-                            class="menu-item"
-                        >
-                            <FontAwesomeIcon
-                                icon="chevron-right"
-                                class="icon-fixed"
-                            />
-                            <p>WHAT I USE</p>
+                        <motion.div :variants="basicTextVariant">
+                            <motion.div
+                                while-hover="whileHover"
+                                initial="initial"
+                                animate="animate"
+                                class="menu-item"
+                            >
+                                <motion.div :variants="leftIconHoverVariant">
+                                    <FontAwesomeIcon
+                                        icon="chevron-left"
+                                        class="icon-fixed"
+                                    />
+                                </motion.div>
+
+                                <motion.a
+                                    :variants="menuItemVariant"
+                                    class="menu-links"
+                                    href="#"
+                                    >WHAT I USE</motion.a
+                                >
+
+                                <motion.div :variants="rightIconVariant">
+                                    <FontAwesomeIcon
+                                        icon="chevron-left"
+                                        class="icon-fixed"
+                                    />
+                                </motion.div>
+                            </motion.div>
                         </motion.div>
 
-                        <motion.div
-                            :variants="basicTextVariant"
-                            class="menu-item"
-                        >
-                            <FontAwesomeIcon
-                                icon="chevron-right"
-                                class="icon-fixed"
-                            />
-                            <p>CONTACT</p>
+                        <motion.div :variants="basicTextVariant">
+                            <motion.div
+                                while-hover="whileHover"
+                                initial="initial"
+                                animate="animate"
+                                class="menu-item"
+                            >
+                                <motion.div :variants="leftIconHoverVariant">
+                                    <FontAwesomeIcon
+                                        icon="chevron-left"
+                                        class="icon-fixed"
+                                    />
+                                </motion.div>
+
+                                <motion.a
+                                    :variants="menuItemVariant"
+                                    class="menu-links"
+                                    href="#"
+                                    >CONTACT</motion.a
+                                >
+
+                                <motion.div :variants="rightIconVariant">
+                                    <FontAwesomeIcon
+                                        icon="chevron-left"
+                                        class="icon-fixed"
+                                    />
+                                </motion.div>
+                            </motion.div>
                         </motion.div>
                     </motion.div>
                 </div>
