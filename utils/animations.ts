@@ -1,4 +1,6 @@
+import { width } from "@fortawesome/free-solid-svg-icons/fa0";
 import { delay } from "motion-v";
+import { Transition } from "vue";
 
 export const containerStaggerVariant = {
     initial: {},
@@ -16,6 +18,16 @@ export const basicTextVariant = {
     },
 };
 
+export const underlineVariant = {
+    initial: { borderWidth: "0px", width: "0%", left: "50%" },
+    whileHover: {
+        borderWidth: "1px",
+        width: "100%",
+        left: "0%",
+    },
+    transition: { duration: 0.4, ease: [0.12, 0, 0.1, 1] },
+};
+
 export const rightIconVariant = {
     initial: { opacity: 0, x: 20 },
     animate: {
@@ -25,7 +37,7 @@ export const rightIconVariant = {
 
     whileHover: {
         opacity: 0,
-        x: -20,
+        x: -40,
         rotate: 180,
         transition: { ease: [0.72, 0, 0.28, 1] },
     },
@@ -33,10 +45,21 @@ export const rightIconVariant = {
 
 export const leftIconHoverVariant = {
     initial: { opacity: 0 },
-    whileHover: { opacity: 1, x: 20, rotate: 180 },
+    whileHover: {
+        opacity: 1,
+        x: 20,
+        rotate: 180,
+        transition: { duration: 0.3 },
+    },
 };
 
 export const menuItemVariant = {
-    whileHover: { x: 20 },
-    transition: { type: "spring" },
+    whileHover: { x: 20, transition: { type: "spring", duration: 0.6 } },
+};
+
+export const basicScaleVariant = {
+    initial: { scale: 1 },
+    whileHover: {
+        scale: 1.05,
+    },
 };

@@ -28,15 +28,57 @@ library.add(faChevronRight, faChevronLeft);
                         class="hour-text fade-in"
                         >RM. &nbsp&nbsp12:17PM</motion.p
                     >
-                    <div class="social-text">
-                        <motion.p :variants="basicTextVariant"
-                            >LINKEDIN</motion.p
+                    <motion.div
+                        class="social-text"
+                        :variants="basicTextVariant"
+                    >
+                        <motion.div
+                            :variants="basicScaleVariant"
+                            while-hover="whileHover"
+                            class="social-div"
                         >
-                        <motion.p :variants="basicTextVariant"
-                            >INSTAGRAM</motion.p
+                            <motion.a
+                                href="https://www.linkedin.com/in/muntean-rares-166897342/"
+                                class="social-item"
+                                >LINKEDIN</motion.a
+                            >
+
+                            <motion.span
+                                :variants="underlineVariant"
+                                class="underline"
+                            ></motion.span>
+                        </motion.div>
+
+                        <motion.div
+                            :variants="basicScaleVariant"
+                            while-hover="whileHover"
+                            class="social-div"
                         >
-                        <motion.p :variants="basicTextVariant">GITHUB</motion.p>
-                    </div>
+                            <motion.a class="social-item">INSTAGRAM</motion.a>
+
+                            <motion.span
+                                :variants="underlineVariant"
+                                class="underline"
+                            ></motion.span>
+                        </motion.div>
+
+                        <motion.div
+                            :variants="basicScaleVariant"
+                            while-hover="whileHover"
+                            class="social-div"
+                        >
+                            <motion.a
+                                href="https://github.com/MunteanRares"
+                                class="social-item"
+                                >GITHUB</motion.a
+                            >
+
+                            <motion.span
+                                :variants="underlineVariant"
+                                class="underline"
+                            ></motion.span>
+                        </motion.div>
+                    </motion.div>
                 </div>
 
                 <div class="header-title">

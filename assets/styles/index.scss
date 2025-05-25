@@ -54,6 +54,31 @@
         display: flex;
         gap: 1.2rem;
     }
+
+    .social-div {
+        position: relative;
+    }
+
+    .social-item {
+        cursor: pointer;
+        text-decoration: none;
+        color: $lightFontColor;
+
+        &:visited {
+            color: $lightFontColor;
+        }
+    }
+
+    .underline {
+        height: 3px;
+        border: 1px solid $primaryColor;
+        border-radius: 2px;
+        background-color: $primaryColor;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 0.4rem;
+        left: 50%;
+    }
 }
 
 .header-title {
