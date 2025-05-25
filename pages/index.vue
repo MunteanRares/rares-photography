@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -8,12 +8,42 @@ import {
 import { motion } from "motion-v";
 
 library.add(faChevronRight, faChevronLeft);
+
+interface MousePosition {
+    x: number;
+    y: number;
+}
+
+const maskPosition = ref<MousePosition>({ x: 0, y: 0 });
+
+function updateMask(e: MouseEvent) {
+    maskPosition.value = { x: e.clientX, y: e.clientY };
+}
+
+onMounted(() => {
+    maskPosition.value = {
+        x: -window.innerWidth,
+        y: window.innerHeight / 2,
+    };
+    window.addEventListener("mousemove", updateMask);
+});
+
+onUnmounted(() => {
+    window.removeEventListener("mousemove", updateMask);
+});
 </script>
 
 <template>
+    <CursorDot />
     <div class="section-header">
         <div class="background-container">
-            <div class="overlay-blur"></div>
+            <div
+                class="overlay-blur"
+                :style="{
+                    maskImage: `radial-gradient(circle 200px at ${maskPosition.x}px ${maskPosition.y}px, transparent 0%, black 100%)`,
+                    WebkitMaskImage: `radial-gradient(circle 200px at ${maskPosition.x}px ${maskPosition.y}px, transparent 0%, black 100%)`,
+                }"
+            ></div>
             <div class="overlay-rectangle"></div>
 
             <motion.div
@@ -129,7 +159,10 @@ library.add(faChevronRight, faChevronLeft);
                                     >SHOP</motion.a
                                 >
 
-                                <motion.div :variants="rightIconVariant">
+                                <motion.div
+                                    :variants="rightIconVariant"
+                                    class="rightIcon"
+                                >
                                     <FontAwesomeIcon
                                         icon="chevron-left"
                                         class="icon-fixed"
@@ -159,7 +192,10 @@ library.add(faChevronRight, faChevronLeft);
                                     >WORK</motion.a
                                 >
 
-                                <motion.div :variants="rightIconVariant">
+                                <motion.div
+                                    :variants="rightIconVariant"
+                                    class="rightIcon"
+                                >
                                     <FontAwesomeIcon
                                         icon="chevron-left"
                                         class="icon-fixed"
@@ -189,7 +225,10 @@ library.add(faChevronRight, faChevronLeft);
                                     >ABOUT</motion.a
                                 >
 
-                                <motion.div :variants="rightIconVariant">
+                                <motion.div
+                                    :variants="rightIconVariant"
+                                    class="rightIcon"
+                                >
                                     <FontAwesomeIcon
                                         icon="chevron-left"
                                         class="icon-fixed"
@@ -219,7 +258,10 @@ library.add(faChevronRight, faChevronLeft);
                                     >WHAT I USE</motion.a
                                 >
 
-                                <motion.div :variants="rightIconVariant">
+                                <motion.div
+                                    :variants="rightIconVariant"
+                                    class="rightIcon"
+                                >
                                     <FontAwesomeIcon
                                         icon="chevron-left"
                                         class="icon-fixed"
@@ -249,7 +291,10 @@ library.add(faChevronRight, faChevronLeft);
                                     >CONTACT</motion.a
                                 >
 
-                                <motion.div :variants="rightIconVariant">
+                                <motion.div
+                                    :variants="rightIconVariant"
+                                    class="rightIcon"
+                                >
                                     <FontAwesomeIcon
                                         icon="chevron-left"
                                         class="icon-fixed"

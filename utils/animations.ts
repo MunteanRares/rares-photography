@@ -1,7 +1,3 @@
-import { width } from "@fortawesome/free-solid-svg-icons/fa0";
-import { delay } from "motion-v";
-import { Transition } from "vue";
-
 export const containerStaggerVariant = {
     initial: {},
     animate: {
@@ -37,7 +33,7 @@ export const rightIconVariant = {
 
     whileHover: {
         opacity: 0,
-        x: -40,
+        x: -20,
         rotate: 180,
         transition: { ease: [0.72, 0, 0.28, 1] },
     },

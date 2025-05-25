@@ -11,7 +11,37 @@ html {
 }
 
 body {
+    cursor: none !important;
     color: $lightFontColor;
     font-family: $defaultFontFamily;
     font-weight: 400;
+}
+
+a,
+button,
+input,
+textarea {
+    cursor: none !important;
+}
+
+.cursor-dot {
+    position: fixed;
+    pointer-events: none;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+
+    transition: transform 0.2s;
+}
+
+.cursor-dot-pointer {
+    transform: translate(-50%, -50%) scale(1.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+}
+
+.click-effect {
+    transform: translate(-50%, -50%) scale(0.5);
 }

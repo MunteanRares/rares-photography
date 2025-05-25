@@ -17,7 +17,7 @@
     height: 100%;
     width: 100%;
     position: absolute;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(11px);
 }
 
 .overlay-rectangle {
@@ -30,7 +30,7 @@
 }
 
 .header-content {
-    cursor: default;
+    user-select: none;
     padding: 2.4rem 3.6rem;
     font-size: 2rem;
     position: relative;
@@ -60,7 +60,6 @@
     }
 
     .social-item {
-        cursor: pointer;
         text-decoration: none;
         color: $lightFontColor;
 
@@ -115,7 +114,6 @@
         font-family: $defaultFontFamily;
         align-self: flex-end;
         font-size: 2rem;
-        margin-right: 1.1rem;
 
         .menu-item {
             display: flex;
@@ -131,9 +129,21 @@
         }
 
         .menu-links {
+            z-index: 99;
             text-decoration: none;
             color: $lightFontColor;
+            padding: 0.2rem 0;
         }
+    }
+
+    .link-div {
+        display: flex;
+        gap: 0.8rem;
+        align-items: center;
+    }
+
+    .rightIcon {
+        z-index: 0;
     }
 }
 
