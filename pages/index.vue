@@ -1,9 +1,11 @@
 <script setup>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { delay, motion } from "motion-v";
+import { basicTextVariant } from "../utils/animations";
 
-library.add(faArrowRight);
+library.add(faChevronRight);
 </script>
 
 <template>
@@ -12,64 +14,127 @@ library.add(faArrowRight);
             <div class="overlay-blur"></div>
             <div class="overlay-rectangle"></div>
 
-            <div class="header-content">
+            <motion.div
+                :variants="containerStaggerVariant"
+                initial="initial"
+                animate="animate"
+                class="header-content"
+            >
                 <div class="top-text">
-                    <p class="hour-text">RM. &nbsp&nbsp12:17PM</p>
+                    <motion.p
+                        :variants="basicTextVariant"
+                        class="hour-text fade-in"
+                        >RM. &nbsp&nbsp12:17PM</motion.p
+                    >
                     <div class="social-text">
-                        <p>LINKEDIN</p>
-                        <p>INSTAGRAM</p>
-                        <p>GITHUB</p>
+                        <motion.p :variants="basicTextVariant"
+                            >LINKEDIN</motion.p
+                        >
+                        <motion.p :variants="basicTextVariant"
+                            >INSTAGRAM</motion.p
+                        >
+                        <motion.p :variants="basicTextVariant">GITHUB</motion.p>
                     </div>
                 </div>
 
                 <div class="header-title">
                     <div class="title-name">
-                        <p class="first-name">RARES</p>
+                        <motion.p
+                            :variants="basicTextVariant"
+                            class="first-name"
+                            >RARES</motion.p
+                        >
                         <div class="second-name-div">
-                            <p>MUNTEAN</p>
-                            <p class="skills">
+                            <motion.p :variants="basicTextVariant"
+                                >MUNTEAN</motion.p
+                            >
+                            <motion.p
+                                :variants="basicTextVariant"
+                                class="skills"
+                            >
                                 DEVELOPER • DESIGNER • PHOTOGRAPHER • EDITOR •
                                 BUILDER
-                            </p>
+                            </motion.p>
                         </div>
                     </div>
 
-                    <div class="menu">
-                        <div class="menu-item">
+                    <motion.div
+                        :variants="containerStaggerVariant"
+                        initial="initial"
+                        animate="animate"
+                        class="menu"
+                    >
+                        <motion.div
+                            :variants="basicTextVariant"
+                            class="menu-item"
+                        >
+                            <FontAwesomeIcon
+                                icon="chevron-right"
+                                class="icon-fixed"
+                            />
                             <p>SHOP</p>
-                            <FontAwesomeIcon icon="arrow-right" size="xs" />
-                        </div>
+                        </motion.div>
 
-                        <div class="menu-item">
+                        <motion.div
+                            :variants="basicTextVariant"
+                            class="menu-item"
+                        >
+                            <FontAwesomeIcon
+                                icon="chevron-right"
+                                class="icon-fixed"
+                            />
                             <p>WORK</p>
-                            <FontAwesomeIcon icon="arrow-right" size="xs" />
-                        </div>
+                        </motion.div>
 
-                        <div class="menu-item">
+                        <motion.div
+                            :variants="basicTextVariant"
+                            class="menu-item"
+                        >
+                            <FontAwesomeIcon
+                                icon="chevron-right"
+                                class="icon-fixed"
+                            />
                             <p>ABOUT</p>
-                            <FontAwesomeIcon icon="arrow-right" size="xs" />
-                        </div>
+                        </motion.div>
 
-                        <div class="menu-item">
+                        <motion.div
+                            :variants="basicTextVariant"
+                            class="menu-item"
+                        >
+                            <FontAwesomeIcon
+                                icon="chevron-right"
+                                class="icon-fixed"
+                            />
                             <p>WHAT I USE</p>
-                            <FontAwesomeIcon icon="arrow-right" size="xs" />
-                        </div>
+                        </motion.div>
 
-                        <div class="menu-item">
+                        <motion.div
+                            :variants="basicTextVariant"
+                            class="menu-item"
+                        >
+                            <FontAwesomeIcon
+                                icon="chevron-right"
+                                class="icon-fixed"
+                            />
                             <p>CONTACT</p>
-                            <FontAwesomeIcon icon="arrow-right" size="xs" />
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
                 </div>
 
                 <div class="bottom-text">
-                    <p class="span-text">DESIGN IN MOTION.</p>
+                    <motion.p :variants="basicTextVariant" class="span-text"
+                        >DESIGN IN MOTION.</motion.p
+                    >
                     <div class="copyright-text">
-                        <p>COPYRIGHT &copy 2025</p>
-                        <p>MUNTEAN RARES</p>
+                        <motion.p :variants="basicTextVariant"
+                            >COPYRIGHT &copy 2025</motion.p
+                        >
+                        <motion.p :variants="basicTextVariant"
+                            >MUNTEAN RARES</motion.p
+                        >
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     </div>
 </template>
