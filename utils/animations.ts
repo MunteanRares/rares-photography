@@ -39,15 +39,15 @@ export const rightIconVariant = {
     },
 };
 
-export const leftIconHoverVariant = {
+export const leftIconHoverVariant = (arrowPos?: number) => ({
     initial: { opacity: 0 },
     whileHover: {
         opacity: 1,
         x: 20,
-        rotate: 180,
+        rotate: arrowPos ? arrowPos : 180,
         transition: { duration: 0.3 },
     },
-};
+});
 
 export const menuItemVariant = {
     whileHover: { x: 20, transition: { type: "spring", duration: 0.6 } },
