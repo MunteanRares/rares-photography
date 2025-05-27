@@ -1,0 +1,51 @@
+@use "/assets/styles/variables" as *;
+.background-container {
+    height: 100%;
+    background-image: url("/public/images/antlers bg.webp");
+    // background-position: center;
+    background-size: cover;
+}
+
+.section-abt-me {
+    margin-top: 3rem;
+    position: relative;
+}
+
+.overlay-blur-abt-me {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backdrop-filter: blur(6px);
+    clip-path: inset(0 0 0 0);
+}
+
+.overlay-rectangle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 65%;
+    background-color: $primaryColor;
+    z-index: 2;
+}
+
+.aboutme-content {
+    padding: 2.4rem 3.2rem;
+    position: relative;
+    font-family: $boldFontFamily;
+    font-size: 3.2rem;
+}
+
+.rectangle-contents {
+    display: flex;
+}
+
+.section-title {
+}
+
+.image-rectangle {
+    width: 70%;
+    border-radius: 4px;
+}

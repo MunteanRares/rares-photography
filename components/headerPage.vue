@@ -17,7 +17,15 @@ interface MousePosition {
 const maskPosition = ref<MousePosition>({ x: 0, y: 0 });
 
 function updateMask(e: MouseEvent) {
-    maskPosition.value = { x: e.clientX, y: e.clientY };
+    const rect = document
+        .querySelector(".overlay-blur")
+        ?.getBoundingClientRect();
+    if (rect) {
+        maskPosition.value = {
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top,
+        };
+    }
 }
 
 onMounted(() => {
@@ -34,16 +42,16 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <CursorDot />
-    <div class="section-header">
+    <section class="section section-header">
+        <div
+            class="overlay-blur"
+            :style="{
+                maskImage: `radial-gradient(circle 200px at ${maskPosition.x}px ${maskPosition.y}px, transparent 30%, black 100%)`,
+                WebkitMaskImage: `radial-gradient(circle 200px at ${maskPosition.x}px ${maskPosition.y}px, transparent 30%, black 100%)`,
+            }"
+        ></div>
+
         <div class="background-container">
-            <div
-                class="overlay-blur"
-                :style="{
-                    maskImage: `radial-gradient(circle 200px at ${maskPosition.x}px ${maskPosition.y}px, transparent 0%, black 100%)`,
-                    WebkitMaskImage: `radial-gradient(circle 200px at ${maskPosition.x}px ${maskPosition.y}px, transparent 0%, black 100%)`,
-                }"
-            ></div>
             <div class="overlay-rectangle"></div>
 
             <motion.div
@@ -321,9 +329,9 @@ onUnmounted(() => {
                 </div>
             </motion.div>
         </div>
-    </div>
+    </section>
 </template>
 
-<style lang="scss">
-@use "../assets/styles/index.scss";
+<style scoped lang="scss">
+@use "../assets/styles/headerStyle.scss";
 </style>

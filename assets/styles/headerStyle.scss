@@ -1,13 +1,12 @@
 @use "/assets/styles/variables" as *;
-.section-header {
-    height: 100vh;
-}
-
 .background-container {
     height: 100%;
     background-image: url("/images/layer3nonoise.webp");
     background-position: center;
     background-size: cover;
+}
+
+.section-header {
     position: relative;
 }
 
@@ -17,7 +16,7 @@
     height: 100%;
     width: 100%;
     position: absolute;
-    backdrop-filter: blur(11px);
+    backdrop-filter: blur(6px);
 }
 
 .overlay-rectangle {

@@ -57,5 +57,5 @@ onUnmounted(() => {
 </template>
 
 <style lang="scss">
-@use "/assets/styles/general.scss";
+@use "/assets/styles/cursor.scss";
 </style>
