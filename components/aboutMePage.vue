@@ -3,6 +3,12 @@ import { motion } from "motion-v";
 import { useMouseMask } from "../composables/useMouseMask";
 
 const { maskPosition } = useMouseMask(".section-abt-me");
+
+const basicAppearProps = {
+    variants: basicAppearScrollVariant,
+    "while-in-view": "onscreen",
+    "in-view-options": { amount: 1 },
+};
 </script>
 
 <template>
@@ -20,17 +26,13 @@ const { maskPosition } = useMouseMask(".section-abt-me");
                 <div class="rectangle-contents">
                     <motion.div initial="offscreen" class="image-description">
                         <motion.img
-                            :variants="basicAppearScrollVariant"
-                            :in-view-options="{ amount: 0.5 }"
-                            while-in-view="onscreen"
+                            v-bind="basicAppearProps"
                             class="image-rectangle"
                             src="/images/me-blackandwhite.jpg"
                         />
                         <div class="abt-me-description">
                             <motion.p
-                                :variants="basicAppearScrollVariant"
-                                while-in-view="onscreen"
-                                :in-view-options="{ amount: 1 }"
+                                v-bind="basicAppearProps"
                                 class="description"
                             >
                                 Hello, my name is Muntean Rareș. I am a student
@@ -42,9 +44,7 @@ const { maskPosition } = useMouseMask(".section-abt-me");
                             </motion.p>
 
                             <motion.p
-                                :variants="basicAppearScrollVariant"
-                                while-in-view="onscreen"
-                                :in-view-options="{ amount: 1 }"
+                                v-bind="basicAppearProps"
                                 class="description"
                             >
                                 In addition to coding, I have a strong interest
@@ -65,13 +65,11 @@ const { maskPosition } = useMouseMask(".section-abt-me");
                         class="download-cv-div"
                     >
                         <motion.a
-                            :variants="basicAppearScrollVariant"
-                            initial="offscreen"
-                            while-in-view="onscreen"
-                            :in-view-options="{ amount: 1 }"
-                            href=""
-                            while-hover="whileHover"
                             class="download-cv"
+                            href=""
+                            v-bind="basicAppearProps"
+                            while-hover="whileHover"
+                            initial="offscreen"
                             >DOWNLOAD A COPY OF MY CV HERE.</motion.a
                         >
 
@@ -83,31 +81,16 @@ const { maskPosition } = useMouseMask(".section-abt-me");
             </div>
 
             <motion.div initial="offscreen" class="aboutme-content">
-                <motion.p
-                    :variants="basicAppearScrollVariant"
-                    while-in-view="onscreen"
-                    :in-view-options="{ amount: 1 }"
-                    class="section-title"
+                <motion.p v-bind="basicAppearProps" class="section-title"
                     >About Me</motion.p
                 >
 
-                <motion.p
-                    :variants="basicAppearScrollVariant"
-                    while-in-view="onscreen"
-                    :in-view-options="{ amount: 1 }"
-                    class="abt-me-resume"
-                >
+                <motion.p v-bind="basicAppearProps" class="abt-me-resume">
                     FULL-STACK EXPLORER PASSIONATE ABOUT <br />
                     BUILDING, LEARNING, AND CREATINGs
                 </motion.p>
 
-                <motion.p
-                    :variants="basicAppearScrollVariant"
-                    while-in-view="onscreen"
-                    :in-view-options="{
-                        amount: 1,
-                    }"
-                    class="art-title-text"
+                <motion.p v-bind="basicAppearProps" class="art-title-text"
                     >CROWNED IN SILENCE, 2025</motion.p
                 >
             </motion.div>

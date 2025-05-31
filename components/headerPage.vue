@@ -11,6 +11,23 @@ import {
 library.add(faChevronRight, faChevronLeft);
 
 const { maskPosition } = useMouseMask(".overlay-blur");
+
+const basicContainerStaggerProps = {
+    variants: containerStaggerVariant,
+    initial: "initial",
+    animate: "animate",
+};
+
+const basicHoverScaleProps = {
+    variants: basicScaleVariant,
+    "while-hover": "whileHover",
+};
+
+const basicMenuItemProps = {
+    initial: "initial",
+    animate: "animate",
+    "while-hover": "whileHover",
+};
 </script>
 
 <template>
@@ -27,9 +44,7 @@ const { maskPosition } = useMouseMask(".overlay-blur");
             <div class="overlay-rectangle"></div>
 
             <motion.div
-                :variants="containerStaggerVariant"
-                initial="initial"
-                animate="animate"
+                v-bind="basicContainerStaggerProps"
                 class="header-content"
             >
                 <div class="top-text">
@@ -43,8 +58,7 @@ const { maskPosition } = useMouseMask(".overlay-blur");
                         :variants="basicTextVariant"
                     >
                         <motion.div
-                            :variants="basicScaleVariant"
-                            while-hover="whileHover"
+                            v-bind="basicHoverScaleProps"
                             class="social-div"
                         >
                             <motion.a
@@ -59,8 +73,7 @@ const { maskPosition } = useMouseMask(".overlay-blur");
                         </motion.div>
 
                         <motion.div
-                            :variants="basicScaleVariant"
-                            while-hover="whileHover"
+                            v-bind="basicHoverScaleProps"
                             class="social-div"
                         >
                             <motion.a class="social-item">INSTAGRAM</motion.a>
@@ -71,8 +84,7 @@ const { maskPosition } = useMouseMask(".overlay-blur");
                         </motion.div>
 
                         <motion.div
-                            :variants="basicScaleVariant"
-                            while-hover="whileHover"
+                            v-bind="basicHoverScaleProps"
                             class="social-div"
                         >
                             <motion.a
@@ -110,17 +122,13 @@ const { maskPosition } = useMouseMask(".overlay-blur");
                     </div>
 
                     <motion.div
-                        :variants="containerStaggerVariant"
-                        initial="initial"
-                        animate="animate"
+                        v-bind="basicContainerStaggerProps"
                         class="menu"
                     >
                         <motion.div :variants="basicTextVariant">
                             <motion.div
+                                v-bind="basicMenuItemProps"
                                 class="menu-item"
-                                while-hover="whileHover"
-                                animate="animate"
-                                initial="initial"
                             >
                                 <motion.div :variants="leftIconHoverVariant()">
                                     <FontAwesomeIcon
@@ -150,10 +158,8 @@ const { maskPosition } = useMouseMask(".overlay-blur");
 
                         <motion.div :variants="basicTextVariant">
                             <motion.div
+                                v-bind="basicMenuItemProps"
                                 class="menu-item"
-                                while-hover="whileHover"
-                                initial="initial"
-                                animate="animate"
                             >
                                 <motion.div :variants="leftIconHoverVariant()">
                                     <FontAwesomeIcon
@@ -183,9 +189,7 @@ const { maskPosition } = useMouseMask(".overlay-blur");
 
                         <motion.div :variants="basicTextVariant">
                             <motion.div
-                                while-hover="whileHover"
-                                initial="initial"
-                                animate="animate"
+                                v-bind="basicMenuItemProps"
                                 class="menu-item"
                             >
                                 <motion.div :variants="leftIconHoverVariant()">
@@ -216,9 +220,7 @@ const { maskPosition } = useMouseMask(".overlay-blur");
 
                         <motion.div :variants="basicTextVariant">
                             <motion.div
-                                while-hover="whileHover"
-                                initial="initial"
-                                animate="animate"
+                                v-bind="basicMenuItemProps"
                                 class="menu-item"
                             >
                                 <motion.div
@@ -251,9 +253,7 @@ const { maskPosition } = useMouseMask(".overlay-blur");
 
                         <motion.div :variants="basicTextVariant">
                             <motion.div
-                                while-hover="whileHover"
-                                initial="initial"
-                                animate="animate"
+                                v-bind="basicMenuItemProps"
                                 class="menu-item"
                             >
                                 <motion.div
