@@ -1,14 +1,9 @@
 <script setup lang="ts">
 import { motion } from "motion-v";
 import { useMouseMask } from "../composables/useMouseMask";
+import { basicAppearProps } from "../utils/animationProps";
 
 const { maskPosition } = useMouseMask(".section-abt-me");
-
-const basicAppearProps = {
-    variants: basicAppearScrollVariant,
-    "while-in-view": "onscreen",
-    "in-view-options": { amount: 1 },
-};
 </script>
 
 <template>
@@ -27,6 +22,7 @@ const basicAppearProps = {
                     <motion.div initial="offscreen" class="image-description">
                         <motion.img
                             v-bind="basicAppearProps"
+                            :in-view-options="{ amount: 0.5, once: true }"
                             class="image-rectangle"
                             src="/images/me-blackandwhite.jpg"
                         />

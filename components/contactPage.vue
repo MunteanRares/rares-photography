@@ -1,9 +1,16 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { motion } from "motion-v";
+</script>
 
 <template>
-    <section class="section-contact"></section>
+    <section class="section-contact">
+        <motion.p v-bind="basicAppearProps" class="section-title"
+            >GET IN TOUCH</motion.p
+        >
+    </section>
+    <Footer />
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 @use "/assets/styles/contactPage.scss";
 </style>

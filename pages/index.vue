@@ -4,4 +4,5 @@
     <CursorDot />
     <HeaderPage />
     <AboutMePage />
+    <ContactPage />
 </template>

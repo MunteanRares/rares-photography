@@ -1,1 +1,13 @@
 @use "/assets/globalStyles/_variables" as *;
+
+.section-contact {
+    background-color: $backgroundColor;
+    height: 400px;
+    padding: 2.4rem 3.2rem;
+}
+
+.section-title {
+    color: $primaryColor;
+    font-family: $boldFontFamily;
+    font-size: $sectionTitleFontSize;
+}
