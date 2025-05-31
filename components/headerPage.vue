@@ -1,44 +1,16 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
+import { motion } from "motion-v";
+import { useMouseMask } from "../composables/useMouseMask";
 import {
     faChevronRight,
     faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "motion-v";
 
 library.add(faChevronRight, faChevronLeft);
 
-interface MousePosition {
-    x: number;
-    y: number;
-}
-
-const maskPosition = ref<MousePosition>({ x: 0, y: 0 });
-
-function updateMask(e: MouseEvent) {
-    const rect = document
-        .querySelector(".overlay-blur")
-        ?.getBoundingClientRect();
-    if (rect) {
-        maskPosition.value = {
-            x: e.clientX - rect.left,
-            y: e.clientY - rect.top,
-        };
-    }
-}
-
-onMounted(() => {
-    maskPosition.value = {
-        x: -window.innerWidth,
-        y: window.innerHeight / 2,
-    };
-    window.addEventListener("mousemove", updateMask);
-});
-
-onUnmounted(() => {
-    window.removeEventListener("mousemove", updateMask);
-});
+const { maskPosition } = useMouseMask(".overlay-blur");
 </script>
 
 <template>
@@ -81,10 +53,9 @@ onUnmounted(() => {
                                 >LINKEDIN</motion.a
                             >
 
-                            <motion.span
-                                :variants="underlineVariant"
-                                class="underline"
-                            ></motion.span>
+                            <AnimatedUnderline
+                                :underline-color="theme.primaryColor"
+                            />
                         </motion.div>
 
                         <motion.div
@@ -94,10 +65,9 @@ onUnmounted(() => {
                         >
                             <motion.a class="social-item">INSTAGRAM</motion.a>
 
-                            <motion.span
-                                :variants="underlineVariant"
-                                class="underline"
-                            ></motion.span>
+                            <AnimatedUnderline
+                                :underline-color="theme.primaryColor"
+                            />
                         </motion.div>
 
                         <motion.div
@@ -111,10 +81,9 @@ onUnmounted(() => {
                                 >GITHUB</motion.a
                             >
 
-                            <motion.span
-                                :variants="underlineVariant"
-                                class="underline"
-                            ></motion.span>
+                            <AnimatedUnderline
+                                :underline-color="theme.primaryColor"
+                            />
                         </motion.div>
                     </motion.div>
                 </div>
@@ -323,7 +292,7 @@ onUnmounted(() => {
                     >
                     <div class="art-title-text">
                         <motion.p :variants="basicTextVariant"
-                            >Solstice Mace, 2025</motion.p
+                            >SOLSTICE MACE, 2025</motion.p
                         >
                     </div>
                 </div>

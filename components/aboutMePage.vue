@@ -1,34 +1,8 @@
 <script setup lang="ts">
-interface MousePosition {
-    x: number;
-    y: number;
-}
+import { motion } from "motion-v";
+import { useMouseMask } from "../composables/useMouseMask";
 
-const maskPosition = ref<MousePosition>({ x: 0, y: 0 });
-
-function updateMask(e: MouseEvent) {
-    const rect = document
-        .querySelector(".section-abt-me")
-        ?.getBoundingClientRect();
-    if (rect) {
-        maskPosition.value = {
-            x: e.clientX - rect.left,
-            y: e.clientY - rect.top,
-        };
-    }
-}
-
-onMounted(() => {
-    maskPosition.value = {
-        x: -window.innerWidth,
-        y: window.innerHeight / 2,
-    };
-    window.addEventListener("mousemove", updateMask);
-});
-
-onUnmounted(() => {
-    window.removeEventListener("mousemove", updateMask);
-});
+const { maskPosition } = useMouseMask(".section-abt-me");
 </script>
 
 <template>
@@ -44,15 +18,99 @@ onUnmounted(() => {
 
             <div class="overlay-rectangle">
                 <div class="rectangle-contents">
-                    <img class="image-rectangle" src="/images/me-blackwhite.jpg"></img>
+                    <motion.div initial="offscreen" class="image-description">
+                        <motion.img
+                            :variants="basicAppearScrollVariant"
+                            :in-view-options="{ amount: 0.5 }"
+                            while-in-view="onscreen"
+                            class="image-rectangle"
+                            src="/images/me-blackandwhite.jpg"
+                        />
+                        <div class="abt-me-description">
+                            <motion.p
+                                :variants="basicAppearScrollVariant"
+                                while-in-view="onscreen"
+                                :in-view-options="{ amount: 1 }"
+                                class="description"
+                            >
+                                Hello, my name is Muntean Rareș. I am a student
+                                at Spiru Haret university located in Bucharest.
+                                I am an enthusiastic developer currently delving
+                                into various aspects of technology through
+                                personal projects ranging from full-stack
+                                applications to engaging web experiences.
+                            </motion.p>
+
+                            <motion.p
+                                :variants="basicAppearScrollVariant"
+                                while-in-view="onscreen"
+                                :in-view-options="{ amount: 1 }"
+                                class="description"
+                            >
+                                In addition to coding, I have a strong interest
+                                in photography, where I capture moments that I
+                                intend to display right here on this website. I
+                                am always receptive to new opportunities and
+                                collaborations as I progress and expand my
+                                knowledge in all domains.
+                            </motion.p>
+                        </div>
+                    </motion.div>
+
+                    <motion.div
+                        :variants="smallScaleVariant"
+                        initial="initial"
+                        animate="animate"
+                        while-hover="whileHover"
+                        class="download-cv-div"
+                    >
+                        <motion.a
+                            :variants="basicAppearScrollVariant"
+                            initial="offscreen"
+                            while-in-view="onscreen"
+                            :in-view-options="{ amount: 1 }"
+                            href=""
+                            while-hover="whileHover"
+                            class="download-cv"
+                            >DOWNLOAD A COPY OF MY CV HERE.</motion.a
+                        >
+
+                        <AnimatedUnderline
+                            :underline-color="theme.lightFontColor"
+                        />
+                    </motion.div>
                 </div>
             </div>
 
-            <div class="aboutme-content">
-                <div class="section-title">
-                    <p>About Me</p>
-                </div>
-            </div>
+            <motion.div initial="offscreen" class="aboutme-content">
+                <motion.p
+                    :variants="basicAppearScrollVariant"
+                    while-in-view="onscreen"
+                    :in-view-options="{ amount: 1 }"
+                    class="section-title"
+                    >About Me</motion.p
+                >
+
+                <motion.p
+                    :variants="basicAppearScrollVariant"
+                    while-in-view="onscreen"
+                    :in-view-options="{ amount: 1 }"
+                    class="abt-me-resume"
+                >
+                    FULL-STACK EXPLORER PASSIONATE ABOUT <br />
+                    BUILDING, LEARNING, AND CREATINGs
+                </motion.p>
+
+                <motion.p
+                    :variants="basicAppearScrollVariant"
+                    while-in-view="onscreen"
+                    :in-view-options="{
+                        amount: 1,
+                    }"
+                    class="art-title-text"
+                    >CROWNED IN SILENCE, 2025</motion.p
+                >
+            </motion.div>
         </div>
     </section>
 </template>

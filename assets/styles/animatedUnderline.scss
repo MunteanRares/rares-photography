@@ -1,0 +1,12 @@
+@use "/assets/styles/variables" as *;
+
+.underline {
+    height: 3px;
+    border: 1px solid $lightFontColor;
+    border-radius: 2px;
+    background-color: $lightFontColor;
+    position: absolute;
+    bottom: 0;
+    transform: translate(0, 100%);
+    left: 50%;
+}

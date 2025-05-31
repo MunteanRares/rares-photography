@@ -2,12 +2,11 @@
 .background-container {
     height: 100%;
     background-image: url("/public/images/antlers bg.webp");
-    // background-position: center;
     background-size: cover;
 }
 
 .section-abt-me {
-    margin-top: 3rem;
+    margin-top: 1.8rem;
     position: relative;
 }
 
@@ -21,7 +20,9 @@
     clip-path: inset(0 0 0 0);
 }
 
+// OVER THE PRIMARY COLOR //
 .overlay-rectangle {
+    color: $lightFontColor;
     position: absolute;
     top: 0;
     right: 0;
@@ -31,21 +32,68 @@
     z-index: 2;
 }
 
+.rectangle-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4.8rem 0 2.4rem 0;
+    height: 100%;
+
+    .image-description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .image-rectangle {
+            width: 70%;
+            border-radius: 4px;
+        }
+
+        .abt-me-description {
+            width: 60%;
+            font-size: 2.1rem;
+            font-weight: 350;
+            margin-top: 3.2rem;
+            margin-left: 1.6rem;
+        }
+
+        .description {
+            margin-top: 2.4rem;
+        }
+    }
+
+    .download-cv-div {
+        position: relative;
+        height: $heightForUnderlinedDiv;
+
+        .download-cv {
+            font-size: 1.8rem;
+            font-weight: 350;
+            text-decoration: none;
+            color: $lightFontColor;
+        }
+    }
+}
+
+// OVER THE IMAGE //
 .aboutme-content {
     padding: 2.4rem 3.2rem;
     position: relative;
-    font-family: $boldFontFamily;
-    font-size: 3.2rem;
-}
-
-.rectangle-contents {
+    width: 35%;
     display: flex;
-}
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    font-family: $boldFontFamily;
 
-.section-title {
-}
+    .section-title {
+        font-size: 3.4rem;
+    }
 
-.image-rectangle {
-    width: 70%;
-    border-radius: 4px;
+    .abt-me-resume {
+        font-size: 2.4rem;
+        margin-bottom: 30rem;
+        text-align: right;
+    }
 }

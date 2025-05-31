@@ -42,6 +42,7 @@
 .top-text {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     .hour-text {
         font-family: $boldFontFamily;
@@ -56,6 +57,7 @@
 
     .social-div {
         position: relative;
+        height: $heightForUnderlinedDiv;
     }
 
     .social-item {
@@ -65,17 +67,6 @@
         &:visited {
             color: $lightFontColor;
         }
-    }
-
-    .underline {
-        height: 3px;
-        border: 1px solid $primaryColor;
-        border-radius: 2px;
-        background-color: $primaryColor;
-        position: absolute;
-        bottom: 0;
-        margin-bottom: 0.4rem;
-        left: 50%;
     }
 }
 
@@ -155,10 +146,5 @@
         font-size: 2.4rem;
         letter-spacing: 0.3px;
         color: $primaryColorContrast;
-    }
-
-    .art-title-text {
-        font-size: 1.4rem;
-        font-style: italic;
     }
 }
