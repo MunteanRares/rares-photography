@@ -8,7 +8,6 @@ export interface MousePosition {
 /**
  * @param selector - CSS selector string to bind the mask to (e.g., ".section-abt-me")
  */
-
 export function useMouseMask(selector: string) {
     const maskPosition = ref<MousePosition>({ x: 0, y: 0 });
 

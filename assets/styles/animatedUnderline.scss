@@ -1,4 +1,4 @@
-@use "/assets/styles/variables" as *;
+@use "/assets/globalStyles/_variables" as *;
 
 .underline {
     height: 3px;
@@ -9,4 +9,5 @@
     bottom: 0;
     transform: translate(0, 100%);
     left: 50%;
+    pointer-events: none;
 }

@@ -11,6 +11,7 @@ import {
 library.add(faChevronRight, faChevronLeft);
 
 const { maskPosition } = useMouseMask(".overlay-blur");
+const { currentHour } = getUpdatedHour();
 
 const basicContainerStaggerProps = {
     variants: containerStaggerVariant,
@@ -21,12 +22,20 @@ const basicContainerStaggerProps = {
 const basicHoverScaleProps = {
     variants: basicScaleVariant,
     "while-hover": "whileHover",
+    "while-press": "whileTap",
 };
 
 const basicMenuItemProps = {
     initial: "initial",
     animate: "animate",
     "while-hover": "whileHover",
+};
+
+const scrollToAbtMe = () => {
+    const element = document.querySelector(".section-abt-me");
+    if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+    }
 };
 </script>
 
@@ -51,7 +60,7 @@ const basicMenuItemProps = {
                     <motion.p
                         :variants="basicTextVariant"
                         class="hour-text fade-in"
-                        >RM. &nbsp&nbsp12:17PM</motion.p
+                        >RM. &nbsp&nbsp{{ currentHour }}</motion.p
                     >
                     <motion.div
                         class="social-text"
@@ -235,7 +244,7 @@ const basicMenuItemProps = {
                                 <motion.a
                                     :variants="menuItemVariant"
                                     class="menu-links"
-                                    href="#"
+                                    @click.prevent="scrollToAbtMe"
                                     >ABOUT</motion.a
                                 >
 
@@ -302,5 +311,5 @@ const basicMenuItemProps = {
 </template>
 
 <style scoped lang="scss">
-@use "../assets/styles/headerStyle.scss";
+@use "../assets/styles/headerPage.scss";
 </style>

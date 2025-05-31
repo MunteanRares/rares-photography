@@ -1,4 +1,5 @@
-@use "/assets/styles/variables" as *;
+@use "/assets/globalStyles/_variables" as *;
+
 .background-container {
     height: 100%;
     background-image: url("/public/images/antlers bg.webp");
@@ -8,6 +9,7 @@
 .section-abt-me {
     margin-top: 1.8rem;
     position: relative;
+    user-select: none;
 }
 
 .overlay-blur-abt-me {
@@ -56,6 +58,7 @@
             font-weight: 350;
             margin-top: 3.2rem;
             margin-left: 1.6rem;
+            user-select: text;
         }
 
         .description {
@@ -65,19 +68,22 @@
 
     .download-cv-div {
         position: relative;
-        height: $heightForUnderlinedDiv;
+        pointer-events: auto;
 
         .download-cv {
             font-size: 1.8rem;
             font-weight: 350;
+            display: block;
             text-decoration: none;
             color: $lightFontColor;
+            height: $heightForUnderlinedDiv;
         }
     }
 }
 
 // OVER THE IMAGE //
 .aboutme-content {
+    color: $lightFontColor;
     padding: 2.4rem 3.2rem;
     position: relative;
     width: 35%;

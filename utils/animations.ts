@@ -2,7 +2,7 @@
 export const containerStaggerVariant = {
     initial: {},
     animate: {
-        transition: { staggerChildren: 0.08 },
+        transition: { staggerChildren: 0.12 },
     },
 };
 
@@ -59,6 +59,7 @@ export const basicScaleVariant = {
     whileHover: {
         scale: 1.05,
     },
+    whileTap: { scale: 0.98 },
 };
 
 export const smallScaleVariant = {
@@ -73,16 +74,19 @@ export const basicAppearScrollVariant = {
     offscreen: {
         y: 20,
         opacity: 0,
-        transition: { ease: [0.72, 0, 0.28, 1], duration: 0.6 },
+        transition: { ease: [0.72, 0, 0.28, 1], duration: 0.4 },
     },
+
     onscreen: {
         y: 0,
         opacity: 1,
         transition: { ease: [0.72, 0, 0.28, 1], duration: 0.8 },
     },
+
     exit: {
         opacity: 0,
         transition: { duration: 5, ease: "easeInOut" },
     },
-    whileHover: { opacity: 1 },
+
+    whileHover: { opacity: 1, y: 0 },
 };

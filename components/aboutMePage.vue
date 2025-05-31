@@ -99,5 +99,5 @@ const basicAppearProps = {
 </template>
 
 <style scoped lang="scss">
-@use "/assets/styles/aboutMeStyle.scss";
+@use "/assets/styles/aboutMePage.scss";
 </style>
