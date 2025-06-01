@@ -56,6 +56,6 @@ onUnmounted(() => {
     ></div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 @use "/assets/styles/cursorDot.scss";
 </style>

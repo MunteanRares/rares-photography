@@ -2,12 +2,61 @@
 
 .section-contact {
     background-color: $backgroundColor;
-    height: 400px;
-    padding: 2.4rem 3.2rem;
+    padding: 2.4rem 3.2rem 1.8rem 3.2rem;
+    color: $darkFontColor;
 }
 
 .section-title {
-    color: $primaryColor;
     font-family: $boldFontFamily;
     font-size: $sectionTitleFontSize;
+}
+
+.all-contact {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    justify-self: center;
+    margin: 3.2rem 0;
+    gap: 4rem;
+
+    .title {
+        font-family: $boldFontFamily;
+        font-size: 2.6rem;
+    }
+
+    .list {
+        list-style: none;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        .list-item {
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+    }
+
+    .link-div {
+        display: flex;
+        gap: 1.2rem;
+        align-items: center;
+    }
+
+    .link-icon {
+        font-size: 1.3rem;
+    }
+}
+
+.go-top {
+    display: flex;
+    gap: 0.8rem;
+    font-family: $boldFontFamily;
+    font-size: 2.4rem;
+    align-items: center;
+    justify-content: end;
+
+    .icon {
+        font-size: 2.2rem;
+    }
 }

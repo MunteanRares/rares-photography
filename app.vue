@@ -13,5 +13,5 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-@use "/assets/styles/general.scss";
+@use "/assets/globalStyles/general.scss";
 </style>

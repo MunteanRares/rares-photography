@@ -3,4 +3,12 @@
 .footer {
     height: 2.4rem;
     background-color: $primaryColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright {
+    font-size: 1.4rem;
+    font-weight: 350;
 }

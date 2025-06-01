@@ -6,6 +6,7 @@
     width: 10px;
     height: 10px;
     background-color: white;
+    border: 1px solid rgb(27, 43, 39);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
@@ -16,6 +17,7 @@
 .cursor-dot-pointer {
     transform: translate(-50%, -50%) scale(1.5);
     box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+    border: 1px solid rgb(27, 43, 39, 0.8);
     opacity: 0.8;
 }
 

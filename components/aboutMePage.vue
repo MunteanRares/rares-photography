@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { motion } from "motion-v";
 import { useMouseMask } from "../composables/useMouseMask";
-import { basicAppearProps } from "../utils/animationProps";
 
 const { maskPosition } = useMouseMask(".section-abt-me");
 </script>
@@ -19,77 +17,54 @@ const { maskPosition } = useMouseMask(".section-abt-me");
 
             <div class="overlay-rectangle">
                 <div class="rectangle-contents">
-                    <motion.div initial="offscreen" class="image-description">
-                        <motion.img
-                            v-bind="basicAppearProps"
-                            :in-view-options="{ amount: 0.5, once: true }"
+                    <div class="image-description">
+                        <img
                             class="image-rectangle"
                             src="/images/me-blackandwhite.jpg"
                         />
                         <div class="abt-me-description">
-                            <motion.p
-                                v-bind="basicAppearProps"
-                                class="description"
-                            >
+                            <p class="description">
                                 Hello, my name is Muntean Rareș. I am a student
                                 at Spiru Haret university located in Bucharest.
                                 I am an enthusiastic developer currently delving
                                 into various aspects of technology through
                                 personal projects ranging from full-stack
                                 applications to engaging web experiences.
-                            </motion.p>
+                            </p>
 
-                            <motion.p
-                                v-bind="basicAppearProps"
-                                class="description"
-                            >
+                            <p class="description">
                                 In addition to coding, I have a strong interest
                                 in photography, where I capture moments that I
                                 intend to display right here on this website. I
                                 am always receptive to new opportunities and
                                 collaborations as I progress and expand my
                                 knowledge in all domains.
-                            </motion.p>
+                            </p>
                         </div>
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                        :variants="smallScaleVariant"
-                        initial="initial"
-                        animate="animate"
-                        while-hover="whileHover"
-                        class="download-cv-div"
-                    >
-                        <motion.a
-                            class="download-cv"
-                            href=""
-                            v-bind="basicAppearProps"
-                            while-hover="whileHover"
-                            initial="offscreen"
-                            >DOWNLOAD A COPY OF MY CV HERE.</motion.a
+                    <div class="download-cv-div">
+                        <a class="download-cv" href=""
+                            >DOWNLOAD A COPY OF MY CV HERE.</a
                         >
 
                         <AnimatedUnderline
                             :underline-color="theme.lightFontColor"
                         />
-                    </motion.div>
+                    </div>
                 </div>
             </div>
 
-            <motion.div initial="offscreen" class="aboutme-content">
-                <motion.p v-bind="basicAppearProps" class="section-title"
-                    >About Me</motion.p
-                >
+            <div class="aboutme-content">
+                <p class="section-title">About Me</p>
 
-                <motion.p v-bind="basicAppearProps" class="abt-me-resume">
+                <p class="abt-me-resume">
                     FULL-STACK EXPLORER PASSIONATE ABOUT <br />
                     BUILDING, LEARNING, AND CREATINGs
-                </motion.p>
+                </p>
 
-                <motion.p v-bind="basicAppearProps" class="art-title-text"
-                    >CROWNED IN SILENCE, 2025</motion.p
-                >
-            </motion.div>
+                <p class="art-title-text">CROWNED IN SILENCE, 2025</p>
+            </div>
         </div>
     </section>
 </template>
