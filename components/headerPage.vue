@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { motion } from "motion-v";
 import { useMouseMask } from "../composables/useMouseMask";
 import {
     faChevronRight,
@@ -12,24 +11,6 @@ library.add(faChevronRight, faChevronLeft);
 
 const { maskPosition } = useMouseMask(".overlay-blur");
 const { currentHour } = getUpdatedHour();
-
-const basicContainerStaggerProps = {
-    variants: containerStaggerVariant,
-    initial: "initial",
-    animate: "animate",
-};
-
-const basicHoverScaleProps = {
-    variants: basicScaleVariant,
-    "while-hover": "whileHover",
-    "while-press": "whileTap",
-};
-
-const basicMenuItemProps = {
-    initial: "initial",
-    animate: "animate",
-    "while-hover": "whileHover",
-};
 
 const scrollToAbtMe = () => {
     const element = document.querySelector(".section-abt-me");
@@ -52,260 +33,172 @@ const scrollToAbtMe = () => {
         <div class="background-container">
             <div class="overlay-rectangle"></div>
 
-            <motion.div
-                v-bind="basicContainerStaggerProps"
-                class="header-content"
-            >
+            <div class="header-content">
                 <div class="top-text">
-                    <motion.p
-                        :variants="basicTextVariant"
-                        class="hour-text fade-in"
-                        >RM. &nbsp&nbsp{{ currentHour }}</motion.p
-                    >
-                    <motion.div
-                        class="social-text"
-                        :variants="basicTextVariant"
-                    >
-                        <motion.div
-                            v-bind="basicHoverScaleProps"
-                            class="social-div"
-                        >
-                            <motion.a
+                    <p class="hour-text fade-in">
+                        RM. &nbsp&nbsp{{ currentHour }}
+                    </p>
+                    <div class="social-text">
+                        <div class="social-div">
+                            <a
                                 href="https://www.linkedin.com/in/muntean-rares-166897342/"
                                 class="social-item"
-                                >LINKEDIN</motion.a
+                                >LINKEDIN</a
                             >
 
                             <AnimatedUnderline
                                 :underline-color="theme.primaryColor"
                             />
-                        </motion.div>
+                        </div>
 
-                        <motion.div
-                            v-bind="basicHoverScaleProps"
-                            class="social-div"
-                        >
-                            <motion.a class="social-item">INSTAGRAM</motion.a>
+                        <div class="social-div">
+                            <a class="social-item">INSTAGRAM</a>
 
                             <AnimatedUnderline
                                 :underline-color="theme.primaryColor"
                             />
-                        </motion.div>
+                        </div>
 
-                        <motion.div
-                            v-bind="basicHoverScaleProps"
-                            class="social-div"
-                        >
-                            <motion.a
+                        <div class="social-div">
+                            <a
                                 href="https://github.com/MunteanRares"
                                 class="social-item"
-                                >GITHUB</motion.a
+                                >GITHUB</a
                             >
 
                             <AnimatedUnderline
                                 :underline-color="theme.primaryColor"
                             />
-                        </motion.div>
-                    </motion.div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="header-title">
                     <div class="title-name">
-                        <motion.p
-                            :variants="basicTextVariant"
-                            class="first-name"
-                            >RARES</motion.p
-                        >
+                        <p class="first-name">RARES</p>
                         <div class="second-name-div">
-                            <motion.p :variants="basicTextVariant"
-                                >MUNTEAN</motion.p
-                            >
-                            <motion.p
-                                :variants="basicTextVariant"
-                                class="skills"
-                            >
+                            <p>MUNTEAN</p>
+                            <p class="skills">
                                 PHOTOGRAPHER • DEVELOPER • DESIGNER • EDITOR •
                                 BUILDER
-                            </motion.p>
+                            </p>
                         </div>
                     </div>
 
-                    <motion.div
-                        v-bind="basicContainerStaggerProps"
-                        class="menu"
-                    >
-                        <motion.div :variants="basicTextVariant">
-                            <motion.div
-                                v-bind="basicMenuItemProps"
-                                class="menu-item"
-                            >
-                                <motion.div :variants="leftIconHoverVariant()">
+                    <div class="menu">
+                        <di>
+                            <div class="menu-item">
+                                <div>
                                     <FontAwesomeIcon
                                         icon="chevron-left"
                                         class="icon-fixed"
                                     />
-                                </motion.div>
+                                </div>
 
-                                <motion.a
-                                    :variants="menuItemVariant"
-                                    class="menu-links"
-                                    href="#"
-                                    >SHOP</motion.a
-                                >
+                                <a class="menu-links" href="#">SHOP</a>
 
-                                <motion.div
-                                    :variants="rightIconVariant"
-                                    class="rightIcon"
-                                >
+                                <div class="rightIcon">
                                     <FontAwesomeIcon
                                         icon="chevron-left"
                                         class="icon-fixed"
                                     />
-                                </motion.div>
-                            </motion.div>
-                        </motion.div>
+                                </div>
+                            </div>
+                        </di>
 
-                        <motion.div :variants="basicTextVariant">
-                            <motion.div
-                                v-bind="basicMenuItemProps"
-                                class="menu-item"
-                            >
-                                <motion.div :variants="leftIconHoverVariant()">
+                        <div>
+                            <div class="menu-item">
+                                <div>
                                     <FontAwesomeIcon
                                         icon="chevron-left"
                                         class="icon-fixed"
                                     />
-                                </motion.div>
+                                </div>
 
-                                <motion.a
-                                    :variants="menuItemVariant"
-                                    class="menu-links"
-                                    href="#"
-                                    >WORK</motion.a
-                                >
+                                <a class="menu-links" href="#">WORK</a>
 
-                                <motion.div
-                                    :variants="rightIconVariant"
-                                    class="rightIcon"
-                                >
+                                <div class="rightIcon">
                                     <FontAwesomeIcon
                                         icon="chevron-left"
                                         class="icon-fixed"
                                     />
-                                </motion.div>
-                            </motion.div>
-                        </motion.div>
+                                </div>
+                            </div>
+                        </div>
 
-                        <motion.div :variants="basicTextVariant">
-                            <motion.div
-                                v-bind="basicMenuItemProps"
-                                class="menu-item"
-                            >
-                                <motion.div :variants="leftIconHoverVariant()">
+                        <div>
+                            <div class="menu-item">
+                                <div>
                                     <FontAwesomeIcon
                                         icon="chevron-left"
                                         class="icon-fixed"
                                     />
-                                </motion.div>
+                                </div>
 
-                                <motion.a
-                                    :variants="menuItemVariant"
-                                    class="menu-links"
-                                    href="#"
-                                    >WHAT I USE</motion.a
-                                >
+                                <a class="menu-links" href="#">WHAT I USE</a>
 
-                                <motion.div
-                                    :variants="rightIconVariant"
-                                    class="rightIcon"
-                                >
+                                <div class="rightIcon">
                                     <FontAwesomeIcon
                                         icon="chevron-left"
                                         class="icon-fixed"
                                     />
-                                </motion.div>
-                            </motion.div>
-                        </motion.div>
+                                </div>
+                            </div>
+                        </div>
 
-                        <motion.div :variants="basicTextVariant">
-                            <motion.div
-                                v-bind="basicMenuItemProps"
-                                class="menu-item"
-                            >
-                                <motion.div
-                                    :variants="leftIconHoverVariant(270)"
-                                >
+                        <div>
+                            <div class="menu-item">
+                                <div>
                                     <FontAwesomeIcon
                                         icon="chevron-left"
                                         class="icon-fixed"
                                     />
-                                </motion.div>
+                                </div>
 
-                                <motion.a
-                                    :variants="menuItemVariant"
+                                <a
                                     class="menu-links"
                                     @click.prevent="scrollToAbtMe"
-                                    >ABOUT</motion.a
+                                    >ABOUT</a
                                 >
 
-                                <motion.div
-                                    :variants="rightIconVariant"
-                                    class="rightIcon"
-                                >
+                                <div class="rightIcon">
                                     <FontAwesomeIcon
                                         icon="chevron-left"
                                         class="icon-fixed"
                                     />
-                                </motion.div>
-                            </motion.div>
-                        </motion.div>
+                                </div>
+                            </div>
+                        </div>
 
-                        <motion.div :variants="basicTextVariant">
-                            <motion.div
-                                v-bind="basicMenuItemProps"
-                                class="menu-item"
-                            >
-                                <motion.div
-                                    :variants="leftIconHoverVariant(270)"
-                                >
+                        <div>
+                            <div class="menu-item">
+                                <div>
                                     <FontAwesomeIcon
                                         icon="chevron-left"
                                         class="icon-fixed"
                                     />
-                                </motion.div>
+                                </div>
 
-                                <motion.a
-                                    :variants="menuItemVariant"
-                                    class="menu-links"
-                                    href="#"
-                                    >CONTACT</motion.a
-                                >
+                                <a class="menu-links" href="#">CONTACT</a>
 
-                                <motion.div
-                                    :variants="rightIconVariant"
-                                    class="rightIcon"
-                                >
+                                <div class="rightIcon">
                                     <FontAwesomeIcon
                                         icon="chevron-left"
                                         class="icon-fixed"
                                     />
-                                </motion.div>
-                            </motion.div>
-                        </motion.div>
-                    </motion.div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="bottom-text">
-                    <motion.p :variants="basicTextVariant" class="span-text"
-                        >DESIGN IN MOTION.</motion.p
-                    >
+                    <p class="span-text">DESIGN IN MOTION.</p>
                     <div class="art-title-text">
-                        <motion.p :variants="basicTextVariant"
-                            >SOLSTICE MACE, 2025</motion.p
-                        >
+                        <p>SOLSTICE MACE, 2025</p>
                     </div>
                 </div>
-            </motion.div>
+            </div>
         </div>
     </section>
 </template>

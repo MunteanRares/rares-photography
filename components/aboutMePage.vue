@@ -1,7 +1,20 @@
 <script setup lang="ts">
 import { useMouseMask } from "../composables/useMouseMask";
+import { SplitText } from "gsap/all";
 
 const { maskPosition } = useMouseMask(".section-abt-me");
+
+onMounted(() => {
+    const staggerChildren = document.querySelectorAll(".staggerWords");
+    const staggerChildrenScrub =
+        document.querySelectorAll(".staggerWordsScrub");
+    const split = SplitText.create(".staggerTogether");
+
+    staggerWordsOnScroll(staggerChildren);
+    staggerWordsScrub(staggerChildrenScrub);
+    triggerScrollImage();
+    staggerTogether(split);
+});
 </script>
 
 <template>
@@ -19,11 +32,11 @@ const { maskPosition } = useMouseMask(".section-abt-me");
                 <div class="rectangle-contents">
                     <div class="image-description">
                         <img
-                            class="image-rectangle"
+                            class="image-rectangle triggerScroll"
                             src="/images/me-blackandwhite.jpg"
                         />
                         <div class="abt-me-description">
-                            <p class="description">
+                            <p class="description staggerTogether">
                                 Hello, my name is Muntean Rareș. I am a student
                                 at Spiru Haret university located in Bucharest.
                                 I am an enthusiastic developer currently delving
@@ -32,7 +45,7 @@ const { maskPosition } = useMouseMask(".section-abt-me");
                                 applications to engaging web experiences.
                             </p>
 
-                            <p class="description">
+                            <p class="description staggerTogether">
                                 In addition to coding, I have a strong interest
                                 in photography, where I capture moments that I
                                 intend to display right here on this website. I
@@ -44,7 +57,7 @@ const { maskPosition } = useMouseMask(".section-abt-me");
                     </div>
 
                     <div class="download-cv-div">
-                        <a class="download-cv" href=""
+                        <a class="download-cv staggerWords" href=""
                             >DOWNLOAD A COPY OF MY CV HERE.</a
                         >
 
@@ -56,14 +69,16 @@ const { maskPosition } = useMouseMask(".section-abt-me");
             </div>
 
             <div class="aboutme-content">
-                <p class="section-title">About Me</p>
+                <p class="section-title staggerWordsScrub">About Me</p>
 
-                <p class="abt-me-resume">
+                <p class="abt-me-resume staggerWordsScrub">
                     FULL-STACK EXPLORER PASSIONATE ABOUT <br />
                     BUILDING, LEARNING, AND CREATINGs
                 </p>
 
-                <p class="art-title-text">CROWNED IN SILENCE, 2025</p>
+                <p class="art-title-text staggerWords">
+                    CROWNED IN SILENCE, 2025
+                </p>
             </div>
         </div>
     </section>
