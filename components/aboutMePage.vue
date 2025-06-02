@@ -9,11 +9,13 @@ onMounted(() => {
     const staggerChildrenScrub =
         document.querySelectorAll(".staggerWordsScrub");
     const split = SplitText.create(".staggerTogether");
+    const downloadCv = document.querySelectorAll(".download-cv");
 
     staggerWordsOnScroll(staggerChildren);
     staggerWordsScrub(staggerChildrenScrub);
     triggerScrollImage();
     staggerTogether(split);
+    hoverOverButtonAnim(downloadCv, 1.03);
 });
 </script>
 
@@ -58,12 +60,9 @@ onMounted(() => {
 
                     <div class="download-cv-div">
                         <a class="download-cv staggerWords" href=""
-                            >DOWNLOAD A COPY OF MY CV HERE.</a
-                        >
-
-                        <AnimatedUnderline
-                            :underline-color="theme.lightFontColor"
-                        />
+                            >DOWNLOAD A COPY OF MY CV HERE.
+                            <UnderlineBtn />
+                        </a>
                     </div>
                 </div>
             </div>

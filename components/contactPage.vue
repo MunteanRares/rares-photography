@@ -10,7 +10,9 @@ library.add(faArrowUpRightFromSquare, faArrowUp);
 
 onMounted(() => {
     const children = document.querySelectorAll(".basicStaggerOnScroll");
+    const buttons = document.querySelectorAll(".hoverLowOpacity");
     basicStaggerOnScroll(children);
+    hoverOverLowOpacityAnim(buttons);
 });
 </script>
 
@@ -22,9 +24,15 @@ onMounted(() => {
             <div class="contact">
                 <p class="title basicStaggerOnScroll">CONTACT</p>
                 <ul class="list">
-                    <li class="list-item basicStaggerOnScroll">Instagram</li>
-                    <li class="list-item basicStaggerOnScroll">LinkedIn</li>
-                    <li class="list-item basicStaggerOnScroll">GitHub</li>
+                    <li class="list-item basicStaggerOnScroll">
+                        <a class="hoverLowOpacity href="">Instagram</a>
+                    </li>
+                    <li class="list-item basicStaggerOnScroll">
+                        <a class="hoverLowOpacity href="">LinkedIn</a>
+                    </li>
+                    <li class="list-item basicStaggerOnScroll ">
+                        <a class="hoverLowOpacity" href="">Github</a>
+                    </li>
                     <li class="list-item basicStaggerOnScroll">
                         Email: rares_famuntean@yahoo.com
                     </li>
@@ -34,10 +42,18 @@ onMounted(() => {
             <div class="pages">
                 <p class="title basicStaggerOnScroll">PAGES</p>
                 <ul class="list">
-                    <li class="list-item basicStaggerOnScroll">About</li>
-                    <li class="list-item basicStaggerOnScroll">Work</li>
-                    <li class="list-item basicStaggerOnScroll">Shop</li>
-                    <li class="list-item basicStaggerOnScroll">What I Use</li>
+                    <li class="list-item basicStaggerOnScroll hoverLowOpacity">
+                        <a href="">About</a>
+                    </li>
+                    <li class="list-item basicStaggerOnScroll hoverLowOpacity">
+                        <a href="">Work</a>
+                    </li>
+                    <li class="list-item basicStaggerOnScroll hoverLowOpacity">
+                        <a href="">Shop</a>
+                    </li>
+                    <li class="list-item basicStaggerOnScroll hoverLowOpacity">
+                        <a href="">What I Use</a>
+                    </li>
                 </ul>
             </div>
 
@@ -45,8 +61,10 @@ onMounted(() => {
                 <p class="title basicStaggerOnScroll">QUICK LINKS</p>
                 <ul class="list">
                     <li class="list-item">
-                        <div class="link-div basicStaggerOnScroll">
-                            <p>Support Me</p>
+                        <div
+                            class="link-div basicStaggerOnScroll hoverLowOpacity"
+                        >
+                            <a href="">Support Me</a>
                             <FontAwesomeIcon
                                 class="link-icon"
                                 icon="fa-solid fa-arrow-up-right-from-square"
@@ -55,8 +73,10 @@ onMounted(() => {
                     </li>
 
                     <li class="list-item">
-                        <div class="link-div basicStaggerOnScroll">
-                            <p>Developer Portfolio</p>
+                        <div
+                            class="link-div basicStaggerOnScroll hoverLowOpacity"
+                        >
+                            <a href="">Developer Portfolio</a>
                             <FontAwesomeIcon
                                 class="link-icon"
                                 icon="fa-solid fa-arrow-up-right-from-square"

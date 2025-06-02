@@ -1,0 +1,11 @@
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    height: 2px;
+    background-color: currentColor;
+    width: 100%;
+    transform-origin: center;
+    transform: scaleX(0);
+    will-change: transform;
+}

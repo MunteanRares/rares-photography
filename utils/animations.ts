@@ -1,9 +1,11 @@
 import { SplitText, ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
-
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
 
+// @param className - The class names u want to select for animation.
+//Each element with that classname will animate on scroll with stagger between them
+// Recommended class name: 'basicStaggerOnScroll'
 export function basicStaggerOnScroll(children: NodeListOf<Element>) {
     children.forEach((el) => {
         gsap.from(el, {
@@ -13,7 +15,7 @@ export function basicStaggerOnScroll(children: NodeListOf<Element>) {
             },
             opacity: 0,
             y: -20,
-            duration: 0.5,
+            duration: 0.8,
             ease: "power3.inOut",
         });
     });

@@ -68,15 +68,13 @@
 
     .download-cv-div {
         position: relative;
-        pointer-events: auto;
 
         .download-cv {
             font-size: 1.8rem;
             font-weight: 350;
-            display: block;
+            display: inline-block;
             text-decoration: none;
             color: $lightFontColor;
-            height: $heightForUnderlinedDiv;
         }
     }
 }

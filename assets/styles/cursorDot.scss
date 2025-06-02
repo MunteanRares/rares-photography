@@ -15,14 +15,16 @@
 }
 
 .cursor-dot-pointer {
-    transform: translate(-50%, -50%) scale(1.5);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+    transform: translate(-50%, -50%) scale(1.3);
+    box-shadow: 0 0 10px rgba(27, 43, 39, 0.8);
     border: 1px solid rgb(27, 43, 39, 0.8);
+    background-color: $primaryColorContrast;
     opacity: 0.8;
 }
 
 .click-effect {
-    transform: translate(-50%, -50%) scale(0.5);
+    transform: translate(-50%, -50%) scale(0.7);
+    will-change: transform;
 }
 
 .copyright-text {

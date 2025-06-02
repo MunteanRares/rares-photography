@@ -64,6 +64,7 @@
     .social-item {
         text-decoration: none;
         color: $lightFontColor;
+        display: inline-block;
 
         &:visited {
             color: $lightFontColor;

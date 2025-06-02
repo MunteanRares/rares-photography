@@ -18,8 +18,12 @@ const scrollToAbtMe = () => {
     }
 };
 
-onMounted(() => {
+onMounted(async () => {
+    await nextTick();
+    const socialItem = document.querySelectorAll(".social-item");
+
     basicStaggerOnLoad(".basicStaggerOnLoad");
+    hoverOverButtonAnim(socialItem, 1.08);
 });
 </script>
 
@@ -38,41 +42,36 @@ onMounted(() => {
 
             <div class="header-content">
                 <div class="top-text">
-                    <p class="hour-text fade-in basicStaggerOnLoad">
-                        RM. &nbsp&nbsp{{ currentHour }}
-                    </p>
+                    <client-only>
+                        <p class="hour-text fade-in basicStaggerOnLoad">
+                            RM. &nbsp&nbsp{{ currentHour }}
+                        </p>
+                    </client-only>
 
                     <div class="social-text">
                         <div class="social-div basicStaggerOnLoad">
                             <a
                                 href="https://www.linkedin.com/in/muntean-rares-166897342/"
                                 class="social-item"
-                                >LINKEDIN</a
-                            >
-
-                            <AnimatedUnderline
-                                :underline-color="theme.primaryColor"
-                            />
+                                >LINKEDIN
+                                <UnderlineBtn underlineColor="#1b2b27" />
+                            </a>
                         </div>
 
                         <div class="social-div basicStaggerOnLoad">
-                            <a class="social-item">INSTAGRAM</a>
-
-                            <AnimatedUnderline
-                                :underline-color="theme.primaryColor"
-                            />
+                            <a class="social-item"
+                                >INSTAGRAM
+                                <UnderlineBtn underlineColor="#1b2b27" />
+                            </a>
                         </div>
 
                         <div class="social-div basicStaggerOnLoad">
                             <a
                                 href="https://github.com/MunteanRares"
                                 class="social-item"
-                                >GITHUB</a
-                            >
-
-                            <AnimatedUnderline
-                                :underline-color="theme.primaryColor"
-                            />
+                                >GITHUB
+                                <UnderlineBtn underlineColor="#1b2b27" />
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -90,7 +89,7 @@ onMounted(() => {
                     </div>
 
                     <div class="menu">
-                        <di>
+                        <div>
                             <div class="menu-item">
                                 <div>
                                     <FontAwesomeIcon
@@ -112,7 +111,7 @@ onMounted(() => {
                                     />
                                 </div>
                             </div>
-                        </di>
+                        </div>
 
                         <div>
                             <div class="menu-item">

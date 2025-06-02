@@ -8,21 +8,28 @@ const maskPosition = ref<MousePosition>({ x: -10, y: -10 });
 const isPointer = ref(false);
 const isClicked = ref(false);
 
+//Checks from most deep element to the first one and checks if contains any button
+function isClickableOrChild(element: HTMLElement | null): boolean {
+    while (element) {
+        if (
+            element.tagName === "A" ||
+            element.tagName === "BUTTON" ||
+            element.classList.contains("clickable") ||
+            (element.hasAttribute("role") &&
+                element.getAttribute("role") === "button")
+        ) {
+            return true;
+        }
+        element = element.parentElement;
+    }
+
+    return false;
+}
+
 function updateMask(e: MouseEvent) {
     maskPosition.value = { x: e.clientX, y: e.clientY };
     const target = e.target as HTMLElement | null;
-    if (
-        target &&
-        (target.tagName === "A" ||
-            target.tagName === "BUTTON" ||
-            (target.hasAttribute("role") &&
-                target.getAttribute("role") === "button") ||
-            target.onclick !== null)
-    ) {
-        isPointer.value = true;
-    } else {
-        isPointer.value = false;
-    }
+    isPointer.value = isClickableOrChild(target);
 }
 
 function mouseClick(e: MouseEvent) {
