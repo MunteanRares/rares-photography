@@ -6,7 +6,6 @@ import {
     faChevronRight,
     faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
-
 library.add(faChevronRight, faChevronLeft);
 
 const { maskPosition } = useMouseMask(".overlay-blur");
@@ -18,6 +17,10 @@ const scrollToAbtMe = () => {
         element.scrollIntoView({ behavior: "smooth" });
     }
 };
+
+onMounted(() => {
+    basicStaggerOnLoad(".basicStaggerOnLoad");
+});
 </script>
 
 <template>
@@ -35,11 +38,12 @@ const scrollToAbtMe = () => {
 
             <div class="header-content">
                 <div class="top-text">
-                    <p class="hour-text fade-in">
+                    <p class="hour-text fade-in basicStaggerOnLoad">
                         RM. &nbsp&nbsp{{ currentHour }}
                     </p>
+
                     <div class="social-text">
-                        <div class="social-div">
+                        <div class="social-div basicStaggerOnLoad">
                             <a
                                 href="https://www.linkedin.com/in/muntean-rares-166897342/"
                                 class="social-item"
@@ -51,7 +55,7 @@ const scrollToAbtMe = () => {
                             />
                         </div>
 
-                        <div class="social-div">
+                        <div class="social-div basicStaggerOnLoad">
                             <a class="social-item">INSTAGRAM</a>
 
                             <AnimatedUnderline
@@ -59,7 +63,7 @@ const scrollToAbtMe = () => {
                             />
                         </div>
 
-                        <div class="social-div">
+                        <div class="social-div basicStaggerOnLoad">
                             <a
                                 href="https://github.com/MunteanRares"
                                 class="social-item"
@@ -75,10 +79,10 @@ const scrollToAbtMe = () => {
 
                 <div class="header-title">
                     <div class="title-name">
-                        <p class="first-name">RARES</p>
-                        <div class="second-name-div">
+                        <p class="first-name basicStaggerOnLoad">RARES</p>
+                        <div class="second-name-div basicStaggerOnLoad">
                             <p>MUNTEAN</p>
-                            <p class="skills">
+                            <p class="skills basicStaggerOnLoad">
                                 PHOTOGRAPHER • DEVELOPER • DESIGNER • EDITOR •
                                 BUILDER
                             </p>
@@ -95,7 +99,11 @@ const scrollToAbtMe = () => {
                                     />
                                 </div>
 
-                                <a class="menu-links" href="#">SHOP</a>
+                                <a
+                                    class="menu-links basicStaggerOnLoad"
+                                    href="#"
+                                    >SHOP</a
+                                >
 
                                 <div class="rightIcon">
                                     <FontAwesomeIcon
@@ -115,27 +123,11 @@ const scrollToAbtMe = () => {
                                     />
                                 </div>
 
-                                <a class="menu-links" href="#">WORK</a>
-
-                                <div class="rightIcon">
-                                    <FontAwesomeIcon
-                                        icon="chevron-left"
-                                        class="icon-fixed"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="menu-item">
-                                <div>
-                                    <FontAwesomeIcon
-                                        icon="chevron-left"
-                                        class="icon-fixed"
-                                    />
-                                </div>
-
-                                <a class="menu-links" href="#">WHAT I USE</a>
+                                <a
+                                    class="menu-links basicStaggerOnLoad"
+                                    href="#"
+                                    >WORK</a
+                                >
 
                                 <div class="rightIcon">
                                     <FontAwesomeIcon
@@ -156,7 +148,31 @@ const scrollToAbtMe = () => {
                                 </div>
 
                                 <a
-                                    class="menu-links"
+                                    class="menu-links basicStaggerOnLoad"
+                                    href="#"
+                                    >WHAT I USE</a
+                                >
+
+                                <div class="rightIcon">
+                                    <FontAwesomeIcon
+                                        icon="chevron-left"
+                                        class="icon-fixed"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="menu-item">
+                                <div>
+                                    <FontAwesomeIcon
+                                        icon="chevron-left"
+                                        class="icon-fixed"
+                                    />
+                                </div>
+
+                                <a
+                                    class="menu-links basicStaggerOnLoad"
                                     @click.prevent="scrollToAbtMe"
                                     >ABOUT</a
                                 >
@@ -179,7 +195,11 @@ const scrollToAbtMe = () => {
                                     />
                                 </div>
 
-                                <a class="menu-links" href="#">CONTACT</a>
+                                <a
+                                    class="menu-links basicStaggerOnLoad"
+                                    href="#"
+                                    >CONTACT</a
+                                >
 
                                 <div class="rightIcon">
                                     <FontAwesomeIcon
@@ -193,8 +213,10 @@ const scrollToAbtMe = () => {
                 </div>
 
                 <div class="bottom-text">
-                    <p class="span-text">DESIGN IN MOTION.</p>
-                    <div class="art-title-text">
+                    <p class="span-text basicStaggerOnLoad">
+                        DESIGN IN MOTION.
+                    </p>
+                    <div class="art-title-text basicStaggerOnLoad">
                         <p>SOLSTICE MACE, 2025</p>
                     </div>
                 </div>

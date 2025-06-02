@@ -7,38 +7,45 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(faArrowUpRightFromSquare, faArrowUp);
+
+onMounted(() => {
+    const children = document.querySelectorAll(".basicStaggerOnScroll");
+    basicStaggerOnScroll(children);
+});
 </script>
 
 <template>
     <section class="section-contact">
-        <p class="section-title">GET IN TOUCH</p>
+        <p class="section-title basicStaggerOnScroll">GET IN TOUCH</p>
 
         <div class="all-contact">
             <div class="contact">
-                <p class="title">CONTACT</p>
+                <p class="title basicStaggerOnScroll">CONTACT</p>
                 <ul class="list">
-                    <li class="list-item">Instagram</li>
-                    <li class="list-item">LinkedIn</li>
-                    <li class="list-item">GitHub</li>
-                    <li class="list-item">Email: rares_famuntean@yahoo.com</li>
+                    <li class="list-item basicStaggerOnScroll">Instagram</li>
+                    <li class="list-item basicStaggerOnScroll">LinkedIn</li>
+                    <li class="list-item basicStaggerOnScroll">GitHub</li>
+                    <li class="list-item basicStaggerOnScroll">
+                        Email: rares_famuntean@yahoo.com
+                    </li>
                 </ul>
             </div>
 
             <div class="pages">
-                <p class="title">PAGES</p>
+                <p class="title basicStaggerOnScroll">PAGES</p>
                 <ul class="list">
-                    <li class="list-item">About</li>
-                    <li class="list-item">Work</li>
-                    <li class="list-item">Shop</li>
-                    <li class="list-item">What I Use</li>
+                    <li class="list-item basicStaggerOnScroll">About</li>
+                    <li class="list-item basicStaggerOnScroll">Work</li>
+                    <li class="list-item basicStaggerOnScroll">Shop</li>
+                    <li class="list-item basicStaggerOnScroll">What I Use</li>
                 </ul>
             </div>
 
             <div class="links">
-                <p class="title">QUICK LINKS</p>
+                <p class="title basicStaggerOnScroll">QUICK LINKS</p>
                 <ul class="list">
                     <li class="list-item">
-                        <div class="link-div">
+                        <div class="link-div basicStaggerOnScroll">
                             <p>Support Me</p>
                             <FontAwesomeIcon
                                 class="link-icon"
@@ -48,7 +55,7 @@ library.add(faArrowUpRightFromSquare, faArrowUp);
                     </li>
 
                     <li class="list-item">
-                        <div class="link-div">
+                        <div class="link-div basicStaggerOnScroll">
                             <p>Developer Portfolio</p>
                             <FontAwesomeIcon
                                 class="link-icon"
@@ -60,7 +67,7 @@ library.add(faArrowUpRightFromSquare, faArrowUp);
             </div>
         </div>
 
-        <div class="go-top">
+        <div class="go-top basicStaggerOnScroll">
             <p>TO TOP</p>
             <FontAwesomeIcon icon="arrow-up" class="icon" />
         </div>

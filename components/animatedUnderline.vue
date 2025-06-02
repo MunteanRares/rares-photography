@@ -8,14 +8,13 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-    <motion.span
-        :variants="underlineVariant"
+    <span
         class="underline"
         :style="{
             border: `1px solid ${props.underlineColor}`,
             backgroundColor: `${props.underlineColor}`,
         }"
-    ></motion.span>
+    ></span>
 </template>
 
 <style lang="scss">
