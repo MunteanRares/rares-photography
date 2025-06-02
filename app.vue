@@ -2,7 +2,7 @@
 import { onMounted } from "vue";
 
 onMounted(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo(0, 0);
 });
 </script>
 

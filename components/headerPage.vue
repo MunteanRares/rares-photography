@@ -2,6 +2,7 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { useMouseMask } from "../composables/useMouseMask";
+import { scrollToAbtMe, scrollToContact } from "../utils/scrollTo";
 import {
     faChevronRight,
     faChevronLeft,
@@ -11,19 +12,14 @@ library.add(faChevronRight, faChevronLeft);
 const { maskPosition } = useMouseMask(".overlay-blur");
 const { currentHour } = getUpdatedHour();
 
-const scrollToAbtMe = () => {
-    const element = document.querySelector(".section-abt-me");
-    if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-    }
-};
-
 onMounted(async () => {
     await nextTick();
-    const socialItem = document.querySelectorAll(".social-item");
+    const socialItems = document.querySelectorAll(".social-item");
+    const menuLinks = document.querySelectorAll(".menu-links");
 
     basicStaggerOnLoad(".basicStaggerOnLoad");
-    hoverOverButtonAnim(socialItem, 1.08);
+    hoverOverButtonAnim(socialItems, 1.08);
+    hoverOverHeaderPage(menuLinks);
 });
 </script>
 
@@ -91,121 +87,83 @@ onMounted(async () => {
                     <div class="menu">
                         <div>
                             <div class="menu-item">
-                                <div>
-                                    <FontAwesomeIcon
-                                        icon="chevron-left"
-                                        class="icon-fixed"
-                                    />
-                                </div>
-
                                 <a
                                     class="menu-links basicStaggerOnLoad"
                                     href="#"
-                                    >SHOP</a
                                 >
-
-                                <div class="rightIcon">
-                                    <FontAwesomeIcon
-                                        icon="chevron-left"
-                                        class="icon-fixed"
-                                    />
-                                </div>
+                                    <p>SHOP</p>
+                                    <div class="rightIcon">
+                                        <FontAwesomeIcon
+                                            icon="chevron-left"
+                                            class="icon-fixed"
+                                        /></div
+                                ></a>
                             </div>
                         </div>
 
                         <div>
                             <div class="menu-item">
-                                <div>
-                                    <FontAwesomeIcon
-                                        icon="chevron-left"
-                                        class="icon-fixed"
-                                    />
-                                </div>
-
                                 <a
                                     class="menu-links basicStaggerOnLoad"
                                     href="#"
-                                    >WORK</a
                                 >
-
-                                <div class="rightIcon">
-                                    <FontAwesomeIcon
-                                        icon="chevron-left"
-                                        class="icon-fixed"
-                                    />
-                                </div>
+                                    <p>WORK</p>
+                                    <div class="rightIcon">
+                                        <FontAwesomeIcon
+                                            icon="chevron-left"
+                                            class="icon-fixed"
+                                        /></div
+                                ></a>
                             </div>
                         </div>
 
                         <div>
                             <div class="menu-item">
-                                <div>
-                                    <FontAwesomeIcon
-                                        icon="chevron-left"
-                                        class="icon-fixed"
-                                    />
-                                </div>
-
                                 <a
                                     class="menu-links basicStaggerOnLoad"
                                     href="#"
-                                    >WHAT I USE</a
                                 >
-
-                                <div class="rightIcon">
-                                    <FontAwesomeIcon
-                                        icon="chevron-left"
-                                        class="icon-fixed"
-                                    />
-                                </div>
+                                    <p>WHAT I USE</p>
+                                    <div class="rightIcon">
+                                        <FontAwesomeIcon
+                                            icon="chevron-left"
+                                            class="icon-fixed"
+                                        /></div
+                                ></a>
                             </div>
                         </div>
 
                         <div>
                             <div class="menu-item">
-                                <div>
-                                    <FontAwesomeIcon
-                                        icon="chevron-left"
-                                        class="icon-fixed"
-                                    />
-                                </div>
-
                                 <a
                                     class="menu-links basicStaggerOnLoad"
                                     @click.prevent="scrollToAbtMe"
-                                    >ABOUT</a
+                                    href="#"
                                 >
-
-                                <div class="rightIcon">
-                                    <FontAwesomeIcon
-                                        icon="chevron-left"
-                                        class="icon-fixed"
-                                    />
-                                </div>
+                                    <p>ABOUT</p>
+                                    <div class="rightIcon">
+                                        <FontAwesomeIcon
+                                            icon="chevron-left"
+                                            class="icon-fixed"
+                                        /></div
+                                ></a>
                             </div>
                         </div>
 
                         <div>
                             <div class="menu-item">
-                                <div>
-                                    <FontAwesomeIcon
-                                        icon="chevron-left"
-                                        class="icon-fixed"
-                                    />
-                                </div>
-
                                 <a
                                     class="menu-links basicStaggerOnLoad"
+                                    @click.prevent="scrollToContact"
                                     href="#"
-                                    >CONTACT</a
                                 >
-
-                                <div class="rightIcon">
-                                    <FontAwesomeIcon
-                                        icon="chevron-left"
-                                        class="icon-fixed"
-                                    />
-                                </div>
+                                    <p>CONTACT</p>
+                                    <div class="rightIcon">
+                                        <FontAwesomeIcon
+                                            icon="chevron-left"
+                                            class="icon-fixed"
+                                        /></div
+                                ></a>
                             </div>
                         </div>
                     </div>

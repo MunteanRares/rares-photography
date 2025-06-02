@@ -56,3 +56,37 @@ export function hoverOverLowOpacityAnim(buttons: NodeListOf<Element>) {
         });
     });
 }
+
+export function hoverOverHeaderPage(buttons: NodeListOf<Element>) {
+    buttons.forEach((button) => {
+        const rightArrow = button.querySelector(".rightIcon");
+        if (!rightArrow) return;
+        button.addEventListener("mouseenter", () => {
+            gsap.to(button, {
+                x: 20,
+                ease: "expo.out",
+            });
+
+            gsap.to(rightArrow, {
+                x: 0,
+                opacity: 1,
+                ease: "expo.out",
+                rotate: 180,
+            });
+        });
+
+        button.addEventListener("mouseleave", () => {
+            gsap.to(button, {
+                x: 0,
+                ease: "expo.out",
+            });
+
+            gsap.to(rightArrow, {
+                x: -20,
+                opacity: 0,
+                ease: "expo.out",
+                rotate: 0,
+            });
+        });
+    });
+}

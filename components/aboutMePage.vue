@@ -33,7 +33,8 @@ onMounted(() => {
             <div class="overlay-rectangle">
                 <div class="rectangle-contents">
                     <div class="image-description">
-                        <img
+                        <NuxtImg
+                            loading="lazy"
                             class="image-rectangle triggerScroll"
                             src="/images/me-blackandwhite.jpg"
                         />

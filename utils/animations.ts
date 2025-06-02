@@ -40,7 +40,10 @@ export function basicStaggerOnLoad(className: string) {
 // Recommended class name: 'staggerWords'
 export function staggerWordsOnScroll(children: NodeListOf<Element>) {
     children.forEach((el) => {
-        const split = SplitText.create(el);
+        const split = SplitText.create(el, {
+            type: "words",
+            autoSplit: true,
+        });
 
         gsap.from(split.words, {
             scrollTrigger: {
@@ -63,7 +66,10 @@ export function staggerWordsOnScroll(children: NodeListOf<Element>) {
 // ! This Animation uses SCRUB.
 export function staggerWordsScrub(children: NodeListOf<Element>) {
     children.forEach((el) => {
-        const split = SplitText.create(el);
+        const split = SplitText.create(el, {
+            type: "words",
+            autoSplit: true,
+        });
 
         gsap.from(split.words, {
             scrollTrigger: {
