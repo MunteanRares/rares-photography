@@ -103,23 +103,17 @@ export function triggerScrollImage() {
     });
 }
 
-// @param split - A split element obtained from SplitText
-//                Recommended to use SplitText.create(staggerTogether) then pass split in.
-//  This animates while scrolling making the image appear and dissapear slowly
-//  Recommended class name: 'staggerTogether'
-//  ! This Animation uses SCRUB.
-export function staggerTogether(split: globalThis.SplitText) {
-    gsap.from(split.words, {
-        scrollTrigger: {
-            trigger: ".staggerTogether",
-            toggleActions: "play reset play reset",
-            scrub: 1,
-            end: "bottom 65%",
-        },
-        opacity: 0,
-        y: 15,
-        duration: 1,
-        stagger: 0.015,
-        ease: "power2.inOut",
+export function appearOnScrollBasic(className: string) {
+    const elements = document.querySelectorAll(className);
+    elements.forEach((el) => {
+        gsap.from(el, {
+            scrollTrigger: {
+                trigger: el,
+                toggleActions: "play reset play reset",
+            },
+            y: 30,
+            opacity: 0,
+            duration: 0.8,
+        });
     });
 }

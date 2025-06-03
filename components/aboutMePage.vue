@@ -4,18 +4,20 @@ import { SplitText } from "gsap/all";
 
 const { maskPosition } = useMouseMask(".section-abt-me");
 
+// let split: globalThis.SplitText;
+
 onMounted(() => {
     const staggerChildren = document.querySelectorAll(".staggerWords");
     const staggerChildrenScrub =
         document.querySelectorAll(".staggerWordsScrub");
-    const split = SplitText.create(".staggerTogether");
+    let split = SplitText.create(".staggerTogether");
     const downloadCv = document.querySelectorAll(".download-cv");
 
     staggerWordsOnScroll(staggerChildren);
     staggerWordsScrub(staggerChildrenScrub);
     triggerScrollImage();
-    staggerTogether(split);
     hoverOverButtonAnim(downloadCv, 1.03);
+    appearOnScrollBasic(".appearOnScroll");
 });
 </script>
 
@@ -36,10 +38,10 @@ onMounted(() => {
                         <NuxtImg
                             loading="lazy"
                             class="image-rectangle triggerScroll"
-                            src="/images/me-blackandwhite.jpg"
+                            src="/images/me-blackandwhite.webp"
                         />
                         <div class="abt-me-description">
-                            <p class="description staggerTogether">
+                            <p class="description appearOnScroll">
                                 Hello, my name is Muntean Rareș. I am a student
                                 at Spiru Haret university located in Bucharest.
                                 I am an enthusiastic developer currently delving
@@ -48,7 +50,7 @@ onMounted(() => {
                                 applications to engaging web experiences.
                             </p>
 
-                            <p class="description staggerTogether">
+                            <p class="description appearOnScroll">
                                 In addition to coding, I have a strong interest
                                 in photography, where I capture moments that I
                                 intend to display right here on this website. I
