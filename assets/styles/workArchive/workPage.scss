@@ -1,0 +1,54 @@
+@use "/assets/globalStyles/variables" as *;
+
+.section-work {
+    padding-bottom: 2.4rem;
+}
+
+.bg-image {
+    background-image: url("/images/workArchive.webp");
+    height: 25rem;
+    background-position: center;
+    background-size: cover;
+    padding: 2.4rem 3.2rem 0 3.2rem;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    font-size: 8.2rem;
+    font-family: $boldFontFamily;
+    line-height: 0.9;
+
+    height: 100%;
+    width: fit-content;
+
+    margin-left: 6rem;
+    transform: translate(0%, 25%);
+
+    .shifted-left {
+        margin-left: 2.4rem;
+    }
+}
+
+.page-description-div {
+    display: flex;
+    justify-content: end;
+    text-align: end;
+    width: 100%;
+    padding: 2.8rem 3.8rem;
+
+    font-size: 1.8rem;
+    font-weight: 350;
+    letter-spacing: -0.4px;
+    line-height: 110%;
+    p {
+        width: 30%;
+    }
+}
+
+.delete-after {
+    margin-top: 15rem;
+    margin-left: 20rem;
+}

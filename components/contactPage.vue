@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { scrollToAbtMe, scrollToHeader } from "../utils/scrollTo";
 import {
     faArrowUpRightFromSquare,
@@ -54,7 +53,12 @@ onMounted(() => {
                         >
                     </li>
                     <li class="list-item basicStaggerOnScroll">
-                        <a class="hoverLowOpacity" href="">Work</a>
+                        <a
+                            class="hoverLowOpacity"
+                            href=""
+                            @click.prevent="goToWorkPage"
+                            >Work</a
+                        >
                     </li>
                     <li class="list-item basicStaggerOnScroll">
                         <a class="hoverLowOpacity" href="">Shop</a>

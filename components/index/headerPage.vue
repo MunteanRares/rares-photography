@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { useMouseMask } from "../composables/useMouseMask";
-import { scrollToAbtMe, scrollToContact } from "../utils/scrollTo";
+import { useMouseMask } from "../../composables/useMouseMask";
+import { scrollToAbtMe, scrollToContact } from "../../utils/scrollTo";
 import {
     faChevronRight,
     faChevronLeft,
@@ -183,5 +183,5 @@ onMounted(async () => {
 </template>
 
 <style scoped lang="scss">
-@use "../assets/styles/headerPage.scss";
+@use "/assets/styles/index/headerPage.scss";
 </style>

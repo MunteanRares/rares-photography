@@ -2,7 +2,7 @@
 
 <template>
     <CursorDot />
-    <HeaderPage />
-    <AboutMePage />
+    <IndexHeaderPage />
+    <IndexAboutMePage />
     <ContactPage />
 </template>

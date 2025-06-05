@@ -48,7 +48,7 @@ export function staggerWordsOnScroll(children: NodeListOf<Element>) {
         gsap.from(split.words, {
             scrollTrigger: {
                 trigger: el,
-                toggleActions: "play reset play reset",
+                toggleActions: "play none play none",
             },
             opacity: 0,
             y: 20,

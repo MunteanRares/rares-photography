@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useMouseMask } from "../composables/useMouseMask";
+import { useMouseMask } from "../../composables/useMouseMask";
 import { SplitText } from "gsap/all";
 
 const { maskPosition } = useMouseMask(".section-abt-me");
@@ -10,7 +10,6 @@ onMounted(() => {
     const staggerChildren = document.querySelectorAll(".staggerWords");
     const staggerChildrenScrub =
         document.querySelectorAll(".staggerWordsScrub");
-    let split = SplitText.create(".staggerTogether");
     const downloadCv = document.querySelectorAll(".download-cv");
 
     staggerWordsOnScroll(staggerChildren);
@@ -87,5 +86,5 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
-@use "/assets/styles/aboutMePage.scss";
+@use "/assets/styles/index/aboutMePage.scss";
 </style>

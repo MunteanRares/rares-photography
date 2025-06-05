@@ -3,7 +3,7 @@ export default defineNuxtConfig({
     app: {
         head: {
             link: [
-                { rel: "preconnect", href: "https://fonts.googleapis.com" },
+                { rel: "preload", href: "https://fonts.googleapis.com" },
                 {
                     rel: "preconnect",
                     href: "https://fonts.gstatic.com",
