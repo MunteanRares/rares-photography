@@ -48,7 +48,7 @@ export function staggerWordsOnScroll(children: NodeListOf<Element>) {
         gsap.from(split.words, {
             scrollTrigger: {
                 trigger: el,
-                toggleActions: "play none play none",
+                toggleActions: "play reverse play reverse",
             },
             opacity: 0,
             y: 20,
@@ -74,7 +74,7 @@ export function staggerWordsScrub(children: NodeListOf<Element>) {
         gsap.from(split.words, {
             scrollTrigger: {
                 trigger: el,
-                toggleActions: "play reset play reset",
+                toggleActions: "play reverse play reverse",
                 scrub: 1,
                 end: "bottom 35%",
             },
@@ -109,9 +109,9 @@ export function appearOnScrollBasic(className: string) {
         gsap.from(el, {
             scrollTrigger: {
                 trigger: el,
-                toggleActions: "play reset play reset",
+                scrub: 1,
             },
-            y: 30,
+            y: 50,
             opacity: 0,
             duration: 0.8,
         });

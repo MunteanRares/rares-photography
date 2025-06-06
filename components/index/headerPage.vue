@@ -38,11 +38,11 @@ onMounted(async () => {
 
             <div class="header-content">
                 <div class="top-text">
-                    <client-only>
+                    <ClientOnly>
                         <p class="hour-text fade-in basicStaggerOnLoad">
                             RM. &nbsp&nbsp{{ currentHour }}
                         </p>
-                    </client-only>
+                    </ClientOnly>
 
                     <div class="social-text">
                         <div class="social-div basicStaggerOnLoad">
