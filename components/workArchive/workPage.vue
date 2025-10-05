@@ -17,7 +17,14 @@ import AlbumCard from "./albumCard.vue";
                 LENS.
             </p>
         </div>
-        <AlbumCard class="delete-after" />
+        <AlbumCard
+            first-album-title-part="AUTOFEST"
+            second-album-title-part="BUCHAREST"
+            album-number="01"
+            album-description="NO CLUE WHAT IM WRITING HERE BUT I DONT WANT LOREM IPSUM SO ITS MUCH
+            BETTER FOR DDOKK"
+            class="delete-after"
+        />
     </section>
 </template>
 

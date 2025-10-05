@@ -1,4 +1,17 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { color } from "motion-v";
+
+const props = defineProps({
+    firstAlbumTitlePart: String,
+    secondAlbumTitlePart: String,
+
+    albumNumber: String,
+    albumDescription: String,
+
+    // firstColor: Object,
+    // secondColor: Object,
+});
+</script>
 
 <template>
     <div class="album-card">
@@ -7,19 +20,18 @@
             style="background-image: url('/images/IMG_3449.jpg')"
         >
             <p class="album-name">
-                AUTOFEST <br />
-                BUCHAREST
+                {{ props.firstAlbumTitlePart }} <br />
+                {{ props.secondAlbumTitlePart }}
             </p>
 
             <div class="album-number">
-                <span class="number">01</span>
+                <span class="number">{{ props.albumNumber }}</span>
                 <div class="color-div" style="background-color: #2c2c15"></div>
                 <div class="color-div" style="background-color: #938676"></div>
             </div>
         </div>
         <div class="album-description">
-            NO CLUE WHAT IM WRITING HERE BUT I DONT WANT LOREM IPSUM SO ITS MUCH
-            BETTER FOR DDOKK
+            {{ props.albumDescription }}
         </div>
     </div>
 </template>
