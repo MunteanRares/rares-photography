@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import { useMouseMask } from "../../composables/useMouseMask";
-import { SplitText } from "gsap/all";
 
 const { maskPosition } = useMouseMask(".section-abt-me");
-
-// let split: globalThis.SplitText;
 
 onMounted(() => {
     const staggerChildren = document.querySelectorAll(".staggerWords");

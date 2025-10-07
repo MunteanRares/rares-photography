@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import AlbumCard from "./albumCard.vue";
+
+// here im going to fetch the albums from database and then display them using the AlbumCard component and v-for
 </script>
 
 <template>

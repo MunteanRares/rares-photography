@@ -74,14 +74,22 @@ onMounted(() => {
                 <ul class="list">
                     <li class="list-item">
                         <div class="link-div basicStaggerOnScroll">
-                            <a class="hoverLowOpacity" href="">Support Me</a>
+                            <a
+                                class="hoverLowOpacity"
+                                href=""
+                                @click.prevent="goToWorkInProgress"
+                                >Support Me</a
+                            >
                             <ExternalLink />
                         </div>
                     </li>
 
                     <li class="list-item">
                         <div class="link-div basicStaggerOnScroll">
-                            <a class="hoverLowOpacity" href=""
+                            <a
+                                class="hoverLowOpacity"
+                                href=""
+                                @click.prevent="goToWorkInProgress"
                                 >Developer Portfolio</a
                             >
                             <ExternalLink />

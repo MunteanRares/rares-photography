@@ -8,7 +8,7 @@ const maskPosition = ref<MousePosition>({ x: -10, y: -10 });
 const isPointer = ref(false);
 const isClicked = ref(false);
 
-//Checks from most deep element to the first one and checks if contains any button
+// Checks from most deep element to the first one and checks if contains any button
 function isClickableOrChild(element: HTMLElement | null): boolean {
     while (element) {
         if (

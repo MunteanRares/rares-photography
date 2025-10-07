@@ -109,9 +109,10 @@ export function appearOnScrollBasic(className: string) {
         gsap.from(el, {
             scrollTrigger: {
                 trigger: el,
-                scrub: 1,
+                scrub: 0.7,
+                end: "top 60%",
             },
-            y: 50,
+            y: 40,
             opacity: 0,
             duration: 0.8,
         });

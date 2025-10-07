@@ -1,0 +1,54 @@
+@use "/assets/globalStyles/variables" as *;
+
+.workInProgress-section {
+    height: 100vh;
+    position: relative;
+}
+
+.workInProgress-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.title {
+    font-size: 4rem;
+    font-family: $boldFontFamily;
+    letter-spacing: 1px;
+}
+
+.loading-bar {
+    width: 80rem;
+    height: 5rem;
+    background-color: $primaryColor;
+    border-radius: 6px;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    outline: 3px solid $lightFontColor;
+}
+
+.bar-fill {
+    background-color: $primaryColorContrast;
+    width: 35%;
+    height: inherit;
+}
+
+.description {
+    font-family: $boldFontFamily;
+    font-size: 3rem;
+    margin-top: 1rem;
+}
+
+.go-back {
+    position: absolute;
+    font-size: 3rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    font-family: $boldFontFamily;
+    color: $lightFontColor;
+    border: none;
+    background-color: transparent;
+}

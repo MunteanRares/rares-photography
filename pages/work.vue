@@ -5,5 +5,3 @@
     <WorkArchiveWorkPage />
     <ContactPage />
 </template>
-
-<style></style>

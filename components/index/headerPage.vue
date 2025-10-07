@@ -105,7 +105,7 @@ onMounted(async () => {
                             <div class="menu-item">
                                 <a
                                     class="menu-links basicStaggerOnLoad"
-                                    href="#"
+                                    @click.prevent="goToWorkPage"
                                 >
                                     <p>WORK</p>
                                     <div class="rightIcon">
@@ -138,7 +138,6 @@ onMounted(async () => {
                                 <a
                                     class="menu-links basicStaggerOnLoad"
                                     @click.prevent="scrollToAbtMe"
-                                    href="#"
                                 >
                                     <p>ABOUT</p>
                                     <div class="rightIcon">
