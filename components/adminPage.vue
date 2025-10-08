@@ -2,6 +2,7 @@
 import * as z from "zod";
 
 const state = reactive({ email: "", password: "" });
+
 const schema = z.object({
     email: z.email("invalid Email"),
     password: z
@@ -9,7 +10,18 @@ const schema = z.object({
         .min(8, "Must be 8 characters long"),
 });
 
-const handleSubmit = () => {};
+const handleSubmit = () => {
+    const res = $fetch(`https://localhost:7277/api/admin/loginadmin`, {
+        method: "POST",
+        body: {
+            email: state.email,
+            password: state.password,
+        },
+        credentials: "include",
+    });
+
+    console.log(res);
+};
 </script>
 
 <template>

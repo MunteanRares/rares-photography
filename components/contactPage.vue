@@ -19,32 +19,30 @@ onMounted(() => {
 </script>
 
 <template>
-    <section class="section-contact">
-        <p class="section-title basicStaggerOnScroll">GET IN TOUCH</p>
+    <section class="section-contact basicStaggerOnScroll">
+        <p class="section-title">GET IN TOUCH</p>
 
         <div class="all-contact">
             <div class="contact">
-                <p class="title basicStaggerOnScroll">CONTACT</p>
+                <p class="title">CONTACT</p>
                 <ul class="list">
-                    <li class="list-item basicStaggerOnScroll">
+                    <li class="list-item">
                         <a class="hoverLowOpacity">Instagram</a>
                     </li>
-                    <li class="list-item basicStaggerOnScroll">
+                    <li class="list-item">
                         <a class="hoverLowOpacity">LinkedIn</a>
                     </li>
-                    <li class="list-item basicStaggerOnScroll">
+                    <li class="list-item">
                         <a class="hoverLowOpacity" href="">Github</a>
                     </li>
-                    <li class="list-item basicStaggerOnScroll">
-                        Email: rares_famuntean@yahoo.com
-                    </li>
+                    <li class="list-item">Email: rares_famuntean@yahoo.com</li>
                 </ul>
             </div>
 
-            <div class="pages">
-                <p class="title basicStaggerOnScroll">PAGES</p>
+            <div class="pages basicStaggerOnScroll">
+                <p class="title">PAGES</p>
                 <ul class="list">
-                    <li class="list-item basicStaggerOnScroll">
+                    <li class="list-item">
                         <a
                             class="hoverLowOpacity"
                             @click.prevent="scrollToAbtMe"
@@ -52,7 +50,7 @@ onMounted(() => {
                             >About</a
                         >
                     </li>
-                    <li class="list-item basicStaggerOnScroll">
+                    <li class="list-item">
                         <a
                             class="hoverLowOpacity"
                             href=""
@@ -60,20 +58,20 @@ onMounted(() => {
                             >Work</a
                         >
                     </li>
-                    <li class="list-item basicStaggerOnScroll">
+                    <li class="list-item">
                         <a class="hoverLowOpacity" href="">Shop</a>
                     </li>
-                    <li class="list-item basicStaggerOnScroll">
+                    <li class="list-item">
                         <a class="hoverLowOpacity" href="">What I Use</a>
                     </li>
                 </ul>
             </div>
 
-            <div class="links">
-                <p class="title basicStaggerOnScroll">QUICK LINKS</p>
+            <div class="links basicStaggerOnScroll">
+                <p class="title">QUICK LINKS</p>
                 <ul class="list">
                     <li class="list-item">
-                        <div class="link-div basicStaggerOnScroll">
+                        <div class="link-div">
                             <a
                                 class="hoverLowOpacity"
                                 href=""
@@ -85,7 +83,7 @@ onMounted(() => {
                     </li>
 
                     <li class="list-item">
-                        <div class="link-div basicStaggerOnScroll">
+                        <div class="link-div">
                             <a
                                 class="hoverLowOpacity"
                                 href=""

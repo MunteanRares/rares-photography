@@ -3,6 +3,21 @@ import gsap from "gsap";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
 
+export function appearOnScrollBasic(className: string) {
+    const elements = document.querySelectorAll(className);
+    elements.forEach((el) => {
+        gsap.from(el, {
+            scrollTrigger: {
+                trigger: el,
+                end: "top 60%",
+            },
+            y: 40,
+            opacity: 0,
+            duration: 0.8,
+        });
+    });
+}
+
 // @param className - The class names u want to select for animation.
 //Each element with that classname will animate on scroll with stagger between them
 // Recommended class name: 'basicStaggerOnScroll'
@@ -11,7 +26,7 @@ export function basicStaggerOnScroll(children: NodeListOf<Element>) {
         gsap.from(el, {
             scrollTrigger: {
                 trigger: el,
-                toggleActions: "play reset play reset",
+                // toggleActions: "play reset play reset",
             },
             opacity: 0,
             y: -20,
@@ -100,21 +115,5 @@ export function triggerScrollImage() {
         y: 40,
         opacity: 0,
         duration: 0.8,
-    });
-}
-
-export function appearOnScrollBasic(className: string) {
-    const elements = document.querySelectorAll(className);
-    elements.forEach((el) => {
-        gsap.from(el, {
-            scrollTrigger: {
-                trigger: el,
-                scrub: 0.7,
-                end: "top 60%",
-            },
-            y: 40,
-            opacity: 0,
-            duration: 0.8,
-        });
     });
 }
