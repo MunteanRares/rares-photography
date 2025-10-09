@@ -7,12 +7,17 @@ export default defineNuxtConfig({
     devtools: { enabled: false },
     modules: ["motion-v/nuxt", "@nuxt/image"],
     ssr: true,
+    runtimeConfig: {
+        public: {
+            apiBase: "https://localhost:7277/api",
+        },
+    },
 
     vite: {
         server: {
             https: {
-                key: fs.readFileSync(path.resolve(__dirname, "server.key")),
-                cert: fs.readFileSync(path.resolve(__dirname, "server.crt")),
+                key: fs.readFileSync(path.resolve(__dirname, "cert.key")),
+                cert: fs.readFileSync(path.resolve(__dirname, "cert.crt")),
             },
             host: "localhost" as any,
             port: 3000,

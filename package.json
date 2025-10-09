@@ -17,6 +17,7 @@
     "@nuxt/ui": "^4.0.1",
     "@vueuse/motion": "^3.0.3",
     "gsap": "^3.13.0",
+    "mkcert": "^3.2.0",
     "motion-v": "^1.1.1",
     "nuxt": "^3.17.4",
     "sass-embedded": "^1.89.0",
