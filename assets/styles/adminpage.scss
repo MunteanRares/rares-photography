@@ -9,6 +9,11 @@
     color: $darkFontColor;
 }
 
+.loading {
+    color: $backgroundColor;
+    font-size: 1.3rem;
+}
+
 .adminpage-div {
     display: flex;
     flex-direction: column;

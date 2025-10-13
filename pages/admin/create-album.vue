@@ -4,8 +4,6 @@ definePageMeta({
 });
 </script>
 
-<template>
-    <CursorDot />
-</template>
+<template></template>
 
 <style></style>

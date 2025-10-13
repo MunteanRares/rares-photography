@@ -9,3 +9,7 @@ export const goToWorkInProgress = () => {
 export const goToHomePage = () => {
     navigateTo("/");
 };
+
+export const goToCreateAlbumPage = () => {
+    navigateTo("/admin/create-album");
+};

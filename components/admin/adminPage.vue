@@ -1,11 +1,8 @@
 <script setup lang="ts">
 const state = reactive({ email: "", password: "" });
 const isLoggedIn = ref(false);
-const isChecking = ref(false);
 
 const checkLoggedIn = async () => {
-    isChecking.value = true;
-    console.log(isChecking.value);
     try {
         const res = await $fetch<{ valid: boolean }>(
             "http://localhost:5121/api/admin/verifytoken",
@@ -16,9 +13,6 @@ const checkLoggedIn = async () => {
         isLoggedIn.value = res.valid;
     } catch (err) {
         isLoggedIn.value = false;
-    } finally {
-        isChecking.value = false;
-        console.log(isChecking.value);
     }
 };
 
@@ -68,15 +62,7 @@ const handleLogout = async () => {
         <div class="adminpage-div">
             <h1 class="adminpage-title">CONTROL PANEL</h1>
 
-            <div v-if="isChecking" class="loading">
-                <p>Loading...</p>
-            </div>
-
-            <form
-                v-else-if="!isLoggedIn && !isChecking"
-                @submit.prevent="handleSubmit"
-                action=""
-            >
+            <form v-if="!isLoggedIn" @submit.prevent="handleSubmit" action="">
                 <div class="form-item">
                     <label for="email">Email</label>
                     <input id="email" v-model="state.email" type="email" />
@@ -98,7 +84,7 @@ const handleLogout = async () => {
                 <p>You are logged in!</p>
                 <div class="button-div">
                     <button @click="handleLogout">Logout</button>
-                    <button @click="">Create Album</button>
+                    <button @click="goToCreateAlbumPage">Create Album</button>
                     <button @click="">Add Photos</button>
                 </div>
             </div>

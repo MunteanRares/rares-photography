@@ -1,12 +1,14 @@
 export default defineNuxtRouteMiddleware(async () => {
+    if (import.meta.server) return;
+
     try {
-        const res = await $fetch<{ valid: boolean }>(
+        await $fetch<{ valid: boolean }>(
             `http://localhost:5121/api/admin/verifytoken`,
             {
                 credentials: "include",
             }
         );
     } catch (err) {
-        if (err) return navigateTo("/");
+        return navigateTo("/");
     }
 });
