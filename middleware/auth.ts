@@ -1,9 +1,11 @@
+import { CONFIG } from "~/src/config";
+
 export default defineNuxtRouteMiddleware(async () => {
     let statusCode = 0;
 
     try {
         const res = await $fetch<{ valid: boolean }>(
-            `http://localhost:5121/api/admin/verifytoken`,
+            `${CONFIG.API_BASE_URL}admin/verifytoken`,
             {
                 headers: useRequestHeaders(["cookie"]),
                 credentials: "include",

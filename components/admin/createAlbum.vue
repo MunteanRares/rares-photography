@@ -11,7 +11,7 @@ const state = reactive({
 const handleSubmit = async () => {
     try {
         const response = await $fetch<{ sucess: boolean }>(
-            `${CONFIG.API_BASE_URL}`
+            `${CONFIG.API_BASE_URL}albums/addnew`
         );
     } catch {}
 };
