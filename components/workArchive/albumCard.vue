@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { color } from "motion-v";
-
 const props = defineProps({
     firstAlbumTitlePart: String,
     secondAlbumTitlePart: String,

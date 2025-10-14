@@ -92,9 +92,10 @@ const handleLogout = async () => {
             <div v-else class="logged-in-div">
                 <p>You are logged in!</p>
                 <div class="button-div">
+                    <button @click="goToHomePage">Back</button>
                     <button @click="handleLogout">Logout</button>
                     <button @click="goToCreateAlbumPage">Create Album</button>
-                    <button @click="">Add Photos</button>
+                    <button @click="goToAddPhotos">Add Photos</button>
                 </div>
             </div>
         </div>

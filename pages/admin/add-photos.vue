@@ -6,6 +6,7 @@ definePageMeta({
 
 <template>
     <CursorDot />
+    <AdminAddPhotoPage />
 </template>
 
 <style></style>

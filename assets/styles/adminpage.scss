@@ -57,3 +57,18 @@
     display: flex;
     gap: 1.4rem;
 }
+
+input[type="file"] {
+    font-size: 1.6rem;
+}
+
+input[type="file"]::file-selector-button {
+    border-radius: 4px;
+    background-color: $primaryColor;
+    border-style: none;
+    padding: 6px 15px;
+    font-family: $boldFontFamily;
+    color: $backgroundColor;
+    margin-right: 1.2rem;
+    cursor: none;
+}

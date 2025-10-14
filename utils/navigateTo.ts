@@ -17,3 +17,7 @@ export const goToCreateAlbumPage = () => {
 export const goToControlPanel = () => {
     navigateTo("/admin/control-panel-abc123");
 };
+
+export const goToAddPhotos = () => {
+    navigateTo("/admin/add-photos");
+};
