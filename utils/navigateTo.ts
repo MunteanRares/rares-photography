@@ -13,3 +13,7 @@ export const goToHomePage = () => {
 export const goToCreateAlbumPage = () => {
     navigateTo("/admin/create-album");
 };
+
+export const goToControlPanel = () => {
+    navigateTo("/admin/control-panel-abc123");
+};

@@ -1,14 +1,21 @@
 export default defineNuxtRouteMiddleware(async () => {
-    if (import.meta.server) return;
+    let statusCode = 0;
 
     try {
-        await $fetch<{ valid: boolean }>(
+        const res = await $fetch<{ valid: boolean }>(
             `http://localhost:5121/api/admin/verifytoken`,
             {
+                headers: useRequestHeaders(["cookie"]),
                 credentials: "include",
+                onResponse({ response }) {
+                    statusCode = response.status;
+                },
             }
         );
-    } catch (err) {
-        return navigateTo("/");
+    } catch {
+    } finally {
+        if (statusCode == 401) {
+            return navigateTo("/");
+        }
     }
 });

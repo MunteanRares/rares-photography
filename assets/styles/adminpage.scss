@@ -6,28 +6,23 @@
     display: flex;
 
     font-family: $boldFontFamily;
-    color: $darkFontColor;
-}
 
-.loading {
-    color: $backgroundColor;
-    font-size: 1.3rem;
+    color: $primaryColor;
 }
 
 .adminpage-div {
     display: flex;
     flex-direction: column;
     background-color: $backgroundColor;
-    max-width: 40rem;
-    max-height: 40rem;
-    padding: 20px 20px;
-    border-radius: 4px;
-    margin: auto;
-    box-shadow: 0px 0px 40px 0px rgb(0, 0, 0, 0.4);
 
     form {
         margin-top: 1rem;
     }
+}
+
+.loading {
+    font-size: 1.8rem;
+    padding: 6px 15px;
 }
 
 .adminpage-title {
@@ -42,32 +37,10 @@
     flex-direction: column;
 }
 
-label {
-    font-size: 2rem;
-}
-
-button {
-    font-family: inherit;
-    padding: 6px 15px;
-    font-size: 1.8rem;
-    letter-spacing: 0.5px;
-    margin-top: 3rem;
-    color: $backgroundColor;
-    background-color: $primaryColor;
-    border: none;
-    border-radius: 3px;
-}
-
-input {
-    font-size: 1.5rem;
-    box-shadow: inset 0 0 2px #222;
-    border: 1px solid $primaryColor;
-    padding: 8px 16px;
-    background: $backgroundColor;
-    font-family: $defaultFontFamily;
-    font-weight: 500;
-    border-radius: 3px;
-    width: 35rem;
+.submit-div {
+    display: flex;
+    gap: 1rem;
+    align-items: end;
 }
 
 .logged-in-div {

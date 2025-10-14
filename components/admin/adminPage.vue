@@ -1,11 +1,14 @@
 <script setup lang="ts">
+import { CONFIG } from "~/src/config";
+
 const state = reactive({ email: "", password: "" });
 const isLoggedIn = ref(false);
+const isCheckingLoggin = ref(false);
 
 const checkLoggedIn = async () => {
     try {
         const res = await $fetch<{ valid: boolean }>(
-            "http://localhost:5121/api/admin/verifytoken",
+            `${CONFIG.API_BASE_URL}admin/verifytoken`,
             {
                 credentials: "include",
             }
@@ -21,9 +24,11 @@ onMounted(() => {
 });
 
 const handleSubmit = async () => {
+    isCheckingLoggin.value = true;
+
     try {
         const res = await $fetch<{ success: boolean }>(
-            `http://localhost:5121/api/admin/loginadmin`,
+            `${CONFIG.API_BASE_URL}admin/loginadmin`,
             {
                 method: "POST",
                 body: {
@@ -38,15 +43,16 @@ const handleSubmit = async () => {
             await checkLoggedIn();
         }
     } catch (err) {
-        console.error(err);
         isLoggedIn.value = false;
+    } finally {
+        isCheckingLoggin.value = false;
     }
 };
 
 const handleLogout = async () => {
     try {
         await $fetch<{ success: boolean }>(
-            "http://localhost:5121/api/admin/logoutadmin",
+            `${CONFIG.API_BASE_URL}admin/logoutadmin`,
             {
                 method: "POST",
                 credentials: "include",
@@ -59,10 +65,10 @@ const handleLogout = async () => {
 
 <template>
     <section class="adminpage-section">
-        <div class="adminpage-div">
+        <div class="adminpage-div card">
             <h1 class="adminpage-title">CONTROL PANEL</h1>
 
-            <form v-if="!isLoggedIn" @submit.prevent="handleSubmit" action="">
+            <form v-if="!isLoggedIn" @submit.prevent="handleSubmit">
                 <div class="form-item">
                     <label for="email">Email</label>
                     <input id="email" v-model="state.email" type="email" />
@@ -77,7 +83,10 @@ const handleLogout = async () => {
                     />
                 </div>
 
-                <button type="submit">Submit</button>
+                <div class="submit-div">
+                    <button type="submit">Submit</button>
+                    <p class="loading" v-show="isCheckingLoggin">Loading...</p>
+                </div>
             </form>
 
             <div v-else class="logged-in-div">
