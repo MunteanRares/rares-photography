@@ -6,8 +6,7 @@ const props = defineProps({
     albumNumber: String,
     albumDescription: String,
 
-    // firstColor: Object,
-    // secondColor: Object,
+    thumbnailUrl: String,
 });
 </script>
 
@@ -15,7 +14,7 @@ const props = defineProps({
     <div class="album-card">
         <div
             class="album-image"
-            style="background-image: url('/images/IMG_3449.jpg')"
+            :style="{ backgroundImage: `url(${thumbnailUrl})` }"
         >
             <p class="album-name">
                 {{ props.firstAlbumTitlePart }} <br />
@@ -24,12 +23,11 @@ const props = defineProps({
 
             <div class="album-number">
                 <span class="number">{{ props.albumNumber }}</span>
-                <div class="color-div" style="background-color: #2c2c15"></div>
-                <div class="color-div" style="background-color: #938676"></div>
+                <div class="color-div" style="background-color: #1b2b27"></div>
             </div>
         </div>
         <div class="album-description">
-            {{ props.albumDescription }}
+            {{ props.albumDescription?.toUpperCase() }}
         </div>
     </div>
 </template>

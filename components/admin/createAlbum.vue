@@ -92,13 +92,13 @@ const handleSubmit = async () => {
                 </div>
 
                 <div class="form-item">
-                    <label for="description">Description</label>
+                    <label for="date">Date</label>
                     <input
-                        id="description"
+                        id="date"
                         v-model="state.description"
                         type="text"
                         required
-                        placeholder="Type your description here..."
+                        placeholder="APRIL 6, 2024"
                     />
                 </div>
 

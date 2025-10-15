@@ -1,7 +1,14 @@
 <script lang="ts" setup>
+import { CONFIG } from "~/src/config";
 import AlbumCard from "./albumCard.vue";
 
-// here im going to fetch the albums from database and then display them using the AlbumCard component and v-for
+const {
+    data: albums,
+    pending,
+    error,
+} = await useAsyncData<Album[]>("albums", () =>
+    $fetch(`${CONFIG.API_BASE_URL}albums`)
+);
 </script>
 
 <template>
@@ -19,14 +26,22 @@ import AlbumCard from "./albumCard.vue";
                 LENS.
             </p>
         </div>
-        <AlbumCard
-            first-album-title-part="AUTOFEST"
-            second-album-title-part="BUCHAREST"
-            album-number="01"
-            album-description="NO CLUE WHAT IM WRITING HERE BUT I DONT WANT LOREM IPSUM SO ITS MUCH
-            BETTER FOR DDOKK"
-            class="delete-after"
-        />
+
+        <div v-if="pending">Loading...</div>
+        <div v-else-if="error">
+            An error has occured. Please try again later.
+        </div>
+        <div v-else class="albums-div">
+            <AlbumCard
+                v-for="album in albums"
+                :key="album.number"
+                :album-description="album.description"
+                :first-album-title-part="album.firstTitle"
+                :second-album-title-part="album.secondTitle"
+                :album-number="album.number"
+                :thumbnail-url="album.thumbnailUrl"
+            />
+        </div>
     </section>
 </template>
 

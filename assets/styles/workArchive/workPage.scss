@@ -48,7 +48,11 @@
     }
 }
 
-.delete-after {
-    margin-top: 15rem;
-    margin-left: 20rem;
+.albums-div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+    margin-top: 10rem;
+    justify-items: center;
+    row-gap: 9rem;
 }
