@@ -40,6 +40,7 @@ const {
                 :second-album-title-part="album.secondTitle"
                 :album-number="album.number"
                 :thumbnail-url="album.thumbnailUrl"
+                :to="album.firstTitle + album.secondTitle"
             />
         </div>
     </section>

@@ -7,29 +7,36 @@ const props = defineProps({
     albumDescription: String,
 
     thumbnailUrl: String,
+
+    to: String,
 });
 </script>
 
 <template>
-    <div class="album-card">
-        <div
-            class="album-image"
-            :style="{ backgroundImage: `url(${thumbnailUrl})` }"
-        >
-            <p class="album-name">
-                {{ props.firstAlbumTitlePart }} <br />
-                {{ props.secondAlbumTitlePart }}
-            </p>
+    <NuxtLink :to="to">
+        <div class="album-card">
+            <div
+                class="album-image"
+                :style="{ backgroundImage: `url(${thumbnailUrl})` }"
+            >
+                <p class="album-name">
+                    {{ props.firstAlbumTitlePart }} <br />
+                    {{ props.secondAlbumTitlePart }}
+                </p>
 
-            <div class="album-number">
-                <span class="number">{{ props.albumNumber }}</span>
-                <div class="color-div" style="background-color: #1b2b27"></div>
+                <div class="album-number">
+                    <span class="number">{{ props.albumNumber }}</span>
+                    <div
+                        class="color-div"
+                        style="background-color: #1b2b27"
+                    ></div>
+                </div>
+            </div>
+            <div class="album-description">
+                {{ props.albumDescription?.toUpperCase() }}
             </div>
         </div>
-        <div class="album-description">
-            {{ props.albumDescription?.toUpperCase() }}
-        </div>
-    </div>
+    </NuxtLink>
 </template>
 
 <style scoped lang="scss">
