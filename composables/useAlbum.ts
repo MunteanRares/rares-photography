@@ -1,3 +1,4 @@
+import { get } from "@nuxt/ui/runtime/utils/index.js";
 import { CONFIG } from "~/src/config";
 
 export const addAlbum = async (formData: FormData) => {
@@ -23,4 +24,16 @@ export const getAlbums = () => {
     );
 
     return { albums, pending, error };
+};
+
+export const getAlbum = async (albumId: string) => {
+    const {
+        data: album,
+        pending,
+        error,
+    } = await useAsyncData<Album>(`album-${albumId}`, () =>
+        $fetch(`${CONFIG.API_BASE_URL}albums/getAlbum/${albumId}`)
+    );
+
+    return { album, pending, error };
 };

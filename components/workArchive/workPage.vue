@@ -33,7 +33,7 @@ const { albums, pending, error } = getAlbums();
                 :second-album-title-part="album.secondTitle"
                 :album-number="album.number"
                 :thumbnail-url="album.thumbnailUrl"
-                :to="`work/` + album.number"
+                :to="`/work/` + album.id"
             />
         </div>
     </section>

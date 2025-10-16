@@ -8,7 +8,7 @@ const state = reactive({
 
 const handleOnSubmit = async () => {
     const formData = new FormData();
-    formData.append("selectedAlbum", state.selectedAlbum);
+    formData.append("selectedAlbum", state.selectedAlbum.toString());
     state.photos?.forEach((photo) => {
         formData.append("thumbnailFiles", photo);
     });
@@ -46,8 +46,8 @@ const handleOnChange = (e: Event) => {
                         <option disabled value="">None</option>
                         <option
                             v-for="album in albums"
-                            :key="album.thumbnailUrl"
-                            :value="album.thumbnailUrl"
+                            :key="album.id"
+                            :value="album.id"
                         >
                             {{
                                 album.firstTitle +

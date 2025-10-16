@@ -1,0 +1,30 @@
+@use "/assets/globalStyles/variables" as *;
+.album-name-div {
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wall {
+    min-height: 70vh;
+    margin: 0 10rem;
+    margin-bottom: 3rem;
+}
+
+.grid-cell-wrapper {
+    border-radius: 4;
+}
+
+.grid-cell {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.title {
+    font-family: $boldFontFamily;
+    color: $lightFontColor;
+    font-size: 3rem;
+    letter-spacing: 0.6 px;
+    font-weight: 500;
+}
