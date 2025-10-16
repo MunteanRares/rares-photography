@@ -72,3 +72,14 @@ input[type="file"]::file-selector-button {
     margin-right: 1.2rem;
     cursor: none;
 }
+
+.input-select {
+    border-radius: 4px;
+    box-shadow: inset 0 0 2px #222;
+    border: 1px solid $primaryColor;
+    background: $backgroundColor;
+    font-family: $boldFontFamily;
+    letter-spacing: 0.4px;
+    font-size: 1.8rem;
+    padding: 8px 16px;
+}

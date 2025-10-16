@@ -49,6 +49,8 @@
 }
 
 .albums-div {
+    margin: 0 10rem;
+    margin-bottom: 3rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2rem;

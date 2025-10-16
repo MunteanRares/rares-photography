@@ -1,14 +1,7 @@
 <script lang="ts" setup>
-import { CONFIG } from "~/src/config";
 import AlbumCard from "./albumCard.vue";
 
-const {
-    data: albums,
-    pending,
-    error,
-} = await useAsyncData<Album[]>("albums", () =>
-    $fetch(`${CONFIG.API_BASE_URL}albums`)
-);
+const { albums, pending, error } = getAlbums();
 </script>
 
 <template>
@@ -40,7 +33,7 @@ const {
                 :second-album-title-part="album.secondTitle"
                 :album-number="album.number"
                 :thumbnail-url="album.thumbnailUrl"
-                :to="album.firstTitle + album.secondTitle"
+                :to="`work/` + album.number"
             />
         </div>
     </section>

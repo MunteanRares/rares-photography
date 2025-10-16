@@ -26,28 +26,19 @@ const handleSubmit = async () => {
     formData.append("description", state.description);
     formData.append("thumbnailFile", state.thumbnailFile!);
 
-    try {
-        const response = await $fetch<{ success: boolean }>(
-            `${CONFIG.API_BASE_URL}albums/addnew`,
-            {
-                method: "POST",
-                body: formData,
-                credentials: "include",
-            }
-        );
+    const response = await addAlbum(formData);
 
-        if (response.success) {
-            state.description = "";
-            state.firstTitle = "";
-            state.secondTitle = "";
-            state.number = "";
-            state.thumbnailFile = null;
+    if (response) {
+        state.description = "";
+        state.firstTitle = "";
+        state.secondTitle = "";
+        state.number = "";
+        state.thumbnailFile = null;
 
-            if (fileInputRef.value) {
-                fileInputRef.value.value = "";
-            }
+        if (fileInputRef.value) {
+            fileInputRef.value.value = "";
         }
-    } catch {}
+    }
 };
 </script>
 
@@ -101,17 +92,6 @@ const handleSubmit = async () => {
                         placeholder="APRIL 6, 2024"
                     />
                 </div>
-
-                <!-- <div class="form-item">
-                    <label for="thumbnail">Thumbnail URL</label>
-                    <input
-                        id="thumbnail"
-                        v-model="state.thumbnailUrl"
-                        type="text"
-                        required
-                        placeholder="autofest.jpg"
-                    />
-                </div> -->
 
                 <div class="form-item">
                     <label for="upload">Upload Thumbnail</label>

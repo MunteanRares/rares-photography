@@ -5,60 +5,26 @@ const state = reactive({ email: "", password: "" });
 const isLoggedIn = ref(false);
 const isCheckingLoggin = ref(false);
 
-const checkLoggedIn = async () => {
-    try {
-        const res = await $fetch<{ valid: boolean }>(
-            `${CONFIG.API_BASE_URL}admin/verifytoken`,
-            {
-                credentials: "include",
-            }
-        );
-        isLoggedIn.value = res.valid;
-    } catch (err) {
-        isLoggedIn.value = false;
-    }
-};
-
-onMounted(() => {
-    checkLoggedIn();
+onMounted(async () => {
+    isLoggedIn.value = await checkLoggedIn();
 });
 
 const handleSubmit = async () => {
     isCheckingLoggin.value = true;
 
     try {
-        const res = await $fetch<{ success: boolean }>(
-            `${CONFIG.API_BASE_URL}admin/loginadmin`,
-            {
-                method: "POST",
-                body: {
-                    email: state.email,
-                    password: state.password,
-                },
-                credentials: "include",
-            }
-        );
+        const response = await login(state.email, state.password);
 
-        if (res.success) {
-            await checkLoggedIn();
+        if (response) {
+            isLoggedIn.value = await checkLoggedIn();
         }
-    } catch (err) {
-        isLoggedIn.value = false;
     } finally {
         isCheckingLoggin.value = false;
     }
 };
 
 const handleLogout = async () => {
-    try {
-        await $fetch<{ success: boolean }>(
-            `${CONFIG.API_BASE_URL}admin/logoutadmin`,
-            {
-                method: "POST",
-                credentials: "include",
-            }
-        );
-    } catch {}
+    await logout();
     isLoggedIn.value = false;
 };
 </script>

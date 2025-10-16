@@ -3,6 +3,15 @@
 .album-card {
     width: 100%;
     max-width: 350px;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.album-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .album-image {
